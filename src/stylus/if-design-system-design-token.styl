@@ -1,0 +1,195 @@
+.if
+  &.design-token
+    background-color #faf9f7
+    display inline-flex
+    white-space nowrap
+    font-size 14px
+    line-height 16px
+    font-weight bold
+    color #331e11
+    border-radius 1rem
+    padding 0 0.5rem
+    height 2rem
+    align-items center
+    justify-content flex-start
+    position relative
+    font-family "Menlo for Powerline", "Menlo Regular for Powerline", "DejaVu Sans Mono", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important
+    box-shadow 0 8px 4px -2px rgba(110,98,94, 0.08), 0 8px 8px rgba(110,98,94, 0.12)
+    margin-bottom 1rem
+    margin-top 0
+    &[data-ancestors]
+      &+[data-descendants]
+        margin-top 2rem
+    &:last-of-type
+      margin-bottom 0
+
+  &.design-token
+    &.copy
+      &::before
+        background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' stroke-width='2' viewBox='0 0 32 32'%3E%3Cpath fill='none' stroke='%23331e11' stroke-linecap='square' stroke-miterlimit='10' d='M17 8V3a2 2 0 00-2-2H3a2 2 0 00-2 2v11a2 2 0 002 2h1v2.667L8 16h3' data-color='color-2'/%3E%3Cpath fill='none' stroke='%23331e11' stroke-linecap='square' stroke-miterlimit='10' d='M15 25V14a2 2 0 012-2h12a2 2 0 012 2v11a2 2 0 01-2 2h-1v2.667L24 27h-7a2 2 0 01-2-2z'/%3E%3Cpath fill='%23331e11' d='M24.825 24l-.425-1.6h-2.78l-.433 1.6h-2.543l2.794-8.6h3.088l2.83 8.6zm-.9-3.5l-.369-1.406q-.129-.469-.314-1.213T23 16.811q-.053.3-.208.984T22.1 20.5z' data-cap='butt' data-stroke='none'/%3E%3Cpath fill='%23331e11' d='M13.685 6.453c-.44-.04-.83-.06-1.419-.06a7.85 7.85 0 01-.68 1.929 7.4 7.4 0 01-1.109 1.619 9.6 9.6 0 003.428 1.209 6.426 6.426 0 00-.99 1.839 12.35 12.35 0 01-3.808-1.819 12.776 12.776 0 01-3.978 1.839 5.793 5.793 0 00-.959-1.769 10.869 10.869 0 003.548-1.309A8.7 8.7 0 016.429 8.1a8.77 8.77 0 01-.69-1.709c-.59 0-.929.02-1.429.06V4.644a12.321 12.321 0 001.449.07h2.209v-.6a3.017 3.017 0 00-.06-.619h2.009a3.068 3.068 0 00-.06.609v.61h2.378a12.226 12.226 0 001.45-.07zm-6.027-.06a5.7 5.7 0 001.4 2.419 5.645 5.645 0 001.25-2.419z' data-cap='butt' data-color='color-2' data-stroke='none'/%3E%3C/svg%3E")
+        height $size-16
+        width $size-16
+        display inline-flex
+        margin-right $size-4
+        content ''
+        background-repeat no-repeat
+        background-size $size-icon-16 $size-icon-16
+        justify-content center
+        align-items center
+
+  &.design-token.large
+    height 56px
+    border-radius 28px
+    padding 0 1.5rem
+    // max-width 320px
+    margin-bottom 2rem
+    &:last-of-type
+      margin-bottom 0
+
+
+
+  &.design-token.large.font
+    height 4rem
+    border-radius 2rem
+    position relative
+    flex-direction column
+    align-items flex-start
+    padding-top 0.75rem
+
+    & code
+      margin-top 8px
+      IDS_TYPOGRAPHY_FontFamily_SansMedium()
+      background-color #ECF1F5
+      border none
+      padding 4px 8px
+      border-radius 6px
+      display inline-block
+      white-space nowrap
+      color #6e625e
+      font-size 14px
+      line-height 12px
+      font-family "Menlo for Powerline", "Menlo Regular for Powerline", "DejaVu Sans Mono", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important
+
+
+  &.design-token.large.color
+    height 68px
+    border-radius 34px
+    padding-left 62px
+    position relative
+    flex-direction column
+    align-items flex-start
+    padding-top 12px
+    padding-bottom 12px
+    &[data-rgb],
+    &[data-color]
+      & code
+        text-transform lowercase
+    &[data-hex]
+      & code
+        &::before
+          content '#'
+          color rgba(110,98,94, 0.5)
+
+    & code
+      margin-top 8px
+      font-weight normal
+      border 1pt solid rgba(110,98,94, 0.2)
+      padding 0 8px
+      border-radius 4px
+      display inline-flex
+      align-items center
+      white-space nowrap
+      font-size 12px
+      height 24px
+      text-transform uppercase
+      line-height 14px
+      font-family "Menlo for Powerline", "Menlo Regular for Powerline", "DejaVu Sans Mono", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important
+
+
+
+
+  &.design-token.color.inline
+    box-shadow none
+    border 1pt solid rgba(110,98,94, .2)
+    height auto
+    line-height inherit
+
+  &.design-token.color
+    padding-left 1.75rem
+
+    & .drop
+      box-sizing content-box
+      border 1px solid #faf9f7
+      background-color transparent
+      background-clip padding-box
+      box-shadow inset 0 0 0 1px rgba(110,98,94, .05), 0 4px 8px rgba(110,98,94, 0.08)
+      height 1rem
+      width 1rem
+      display block
+      border-radius 100%
+      position absolute
+      top 50%
+      transform translateY(-50%)
+      left 7px
+
+
+
+  &.design-token.large.color .drop
+    border 2px solid #faf9f7
+    background-color transparent
+    box-shadow 0 8px 4px -2px rgba(110,98,94, 0.08), 0 8px 8px rgba(110,98,94, 0.12)
+    height 32px
+    width 32px
+    display block
+    border-radius 100%
+    position absolute
+    top 50%
+    transform translateY(-50%)
+    left 18px
+
+
+  &.design-token.text-color
+    & .text
+      IDS_TYPOGRAPHY_FontFamily_SansBold()
+      display inline-block
+      margin-right 8px
+
+
+  &.design-token.font-weight
+    & .text
+      display inline-block
+      margin-right 8px
+      margin-left 4px
+      IDS_TYPOGRAPHY_FontFamily_Sans()
+      font-size 1rem
+
+
+
+  &.design-token.light
+    background-color #374151
+
+
+
+  &.design-token.font-size,
+  &.design-token.line-height,
+  &.design-token.size
+    &::before
+      content attr(data-value)
+      IDS_TYPOGRAPHY_FontFamily_SansMedium()
+      background-color #f1ece8
+      border none
+      margin-right 4px
+      padding 4px 4px
+      border-radius 6px
+      display inline-block
+      white-space nowrap
+      color #6e625e
+      font-size 11px
+      line-height 12px
+      font-family "Menlo for Powerline", "Menlo Regular for Powerline", "DejaVu Sans Mono", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important
+
+.if.table-container.microcopy
+  & > table.if
+    & th:nth-child(1),
+    & td:nth-child(1)
+      width 19rem;

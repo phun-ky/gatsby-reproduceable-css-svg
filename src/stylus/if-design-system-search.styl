@@ -1,0 +1,217 @@
+header.sg.global.header input[type="search"].if
+  width 100%
+  appearance textfield
+  -webkit-appearance textfield
+
+
+.if.sg.search
+  display none
+  +IDS_BREAKPOINT_MQ_Smaller_Min()
+    display flex
+    justify-content center
+    align-items center
+
+.if.sg.search.toplevel
+  width 100%
+  display flex
+  justify-content center
+  align-items center
+
+
+.if.sg.search
+  & > .if.icon-button
+    display inline-block
+    height 28px
+    width 28px
+    min-width 28px
+    position relative
+    background-image url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctitle%3Ezoom%3C/title%3E%3Cg class=%27nc-icon-wrapper%27 stroke-linecap=%27square%27 stroke-linejoin=%27miter%27 stroke-width=%272%27 fill=%27%23331e11%27 stroke=%27%23331e11%27%3E%3Cline data-color=%27color-2%27 x1=%2729%27 y1=%2729%27 x2=%2720.777%27 y2=%2720.777%27 fill=%27none%27 stroke-miterlimit=%2710%27/%3E%3Ccircle cx=%2713%27 cy=%2713%27 r=%2711%27 fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27/%3E%3C/g%3E%3C/svg%3E")
+
+
+.if.sg.search
+  & > .if.icon-button
+    &::before
+      content none
+
+    &::after
+      content ""
+      width $size-48
+      height $size-48
+      background transparent
+      display block
+      position absolute
+      top 50%
+      left 50%
+      transform translate(-50%,-50%)
+
+
+.if.sg.search
+  & > .if.icon-button
+    &:hover,
+    &.is-hovered
+      background-image url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctitle%3Ezoom%3C/title%3E%3Cg class=%27nc-icon-wrapper%27 stroke-linecap=%27square%27 stroke-linejoin=%27miter%27 stroke-width=%272%27 fill=%27%230054f0%27 stroke=%27%230054f0%27%3E%3Cline data-color=%27color-2%27 x1=%2729%27 y1=%2729%27 x2=%2720.777%27 y2=%2720.777%27 fill=%27none%27 stroke-miterlimit=%2710%27/%3E%3Ccircle cx=%2713%27 cy=%2713%27 r=%2711%27 fill=%27none%27 stroke=%27%230054f0%27 stroke-miterlimit=%2710%27/%3E%3C/g%3E%3C/svg%3E")
+
+
+.if.sg.search
+  & .if.desktop-search
+    display none
+    position absolute
+    top calc(-52px + 14px)
+    right calc(100% - 36px)
+    background-color $color-background-lightest-beige
+    list-style none
+    box-shadow none
+    background #e8e0d9
+    width 640px
+    padding 0
+    height 104px
+    align-items center
+    justify-content flex-start
+
+
+.if.sg.search
+  & .if.desktop-search
+    &.is-open
+      display flex
+
+
+.if.sg.search
+  & .if.desktop-search
+    & input[type="search"].if
+      background-color #f1ece8
+      border none
+      background-position left 1.25rem center
+      background-image url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cg class='nc-icon-wrapper' stroke-linecap='square' stroke-width='1.5' fill='none' stroke='%23331e11' stroke-miterlimit='10'%3E%3Cpath data-color='color-2' d='M29 29l-8.223-8.223'/%3E%3Ccircle cx='13' cy='13' r='11'/%3E%3C/g%3E%3C/svg%3E")
+      max-width 640px
+      width 100%
+      padding-left 3.25rem
+      background-size 1.5rem 1.5rem
+
+
+.if.sg.search
+  & .if.search-field.autocomplete .if.suggestions
+    border none
+    z-index 600
+    max-width 800px
+    min-width 40vw
+    width 100%
+    background-color #f1ece8
+    max-height 50vh
+    overflow-y auto
+    scrollbar-width thin
+
+.if.sg.search.toplevel
+  & .if.search-field.autocomplete .if.suggestions
+    max-height 20rem
+
+.if.sg.search
+  & .if.search-field.autocomplete .if.suggestions::-webkit-scrollbar
+    background-color #f1ece8
+    width $size-4
+    height $size-16
+
+
+.if.sg.search
+  & .if.search-field.autocomplete .if.suggestions::-webkit-scrollbar-thumb
+    background-color $color-text-light-brown
+    width $size-4
+
+
+.if.sg.search
+  & .if.search-field.autocomplete .if.suggestions > li.if
+    flex-shrink 0
+    flex-grow 0
+    &:hover,
+    &:focus
+      background-color #e8e0d9
+
+
+.if.sg.search
+  & .if.search-field.autocomplete .if.suggestions > li.if:first-of-type::before
+    content ""
+    height 1pt
+    width calc(100% - 2.5rem)
+    background rgba(110,98,94,.1)
+    position absolute
+    top 0
+
+
+.sg.if.search-result-title
+  display inline-block
+  font-size $size-font-16
+  IDS_TYPOGRAPHY_FontFamily_Sans()
+
+
+.sg.if.search-result-excerpt
+  display inline-block
+  IDS_TYPOGRAPHY_Text_Disclaimer()
+  font-size $size-font-14
+  margin-left 1rem
+  overflow hidden
+  max-width none
+  width 100%
+  text-overflow ellipsis
+
+
+.if.search .if.close
+  position absolute
+  cursor pointer
+  height 1rem
+  width 1rem
+  right 1rem
+  z-index 1
+  display block
+  background-color transparent
+  border none
+  margin 0
+  padding 0
+  background-image url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cg class='nc-icon-wrapper' stroke-linecap='square' stroke-width='4' fill='none' stroke='%23331e11' stroke-miterlimit='10'%3E%3Cpath d='M27 5L5 27M27 27L5 5'/%3E%3C/g%3E%3C/svg%3E")
+  background-repeat no-repeat
+  background-size 1rem 1rem
+  background-position center center
+
+
+.if.search-field .if.suggestions>li.if.is-focused,
+.if.search-field .if.suggestions>li.if.is-selected,
+.if.search-field .if.suggestions>li.if:focus
+    IDS_UTIL_PseudoStates_Focus_Inset()
+    position relative
+    z-index 1
+
+.if.search-field .if.suggestions>li.if:focus:not(:focus-visible)
+  outline none
+  outline-offset 0
+  box-shadow none
+
+.if.search-field .if.suggestions>li.if:focus-visible
+  IDS_UTIL_PseudoStates_Focus_Inset()
+  position relative
+  z-index 1
+
+.if.sg.search
+  & .if.search-result-item-holder
+    width 100%
+    display flex
+
+.if.sg.search
+  & .if.search-result-tags
+    margin-left 1rem
+    display flex
+    justify-content flex-end
+    align-items center
+
+.if.sg.search
+  & .if.tag
+    margin-bottom 0
+    min-height 0
+    font-size 12px
+    flex-grow 0
+    height 1.5rem
+    padding 0 8px
+    margin-right 4px
+
+    &:first-child
+      margin-left auto
+
+    &:last-child
+      margin-right 0

@@ -1,0 +1,131 @@
+.sg.section.navigation
+  display flex
+  justify-content flex-start
+  align-items flex-start
+  IDS_TYPOGRAPHY_Text_Meta()
+  +IDS_BREAKPOINT_MQ_Large_Min()
+    display none
+
+.sg.section.nav
+  position relative
+  margin 0
+  padding 0
+  margin 0
+  display flex
+  flex-direction column
+  width 100%
+  grid-gap 1rem 1rem
+  margin-bottom 4rem
+  & > li.sg.item
+    margin 0
+
+.sg.section.nav li
+  list-style none
+  margin 0
+  font-size 18px
+  display inline-block
+  padding 0
+  margin-right 16px
+
+.sg.section.nav li a,
+.sg.section.nav li a:visited
+  font-size 18px
+  display inline-block
+  transition all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)
+  position relative
+  text-decoration none
+
+
+
+.if.sidebar-menu.pageNavigation
+  justify-content flex-start
+  align-items flex-start
+  flex-direction column
+  IDS_TYPOGRAPHY_Text_Meta()
+  padding 0
+  padding-top calc(104px + 3rem)
+  padding-right $size-spacing-56
+  margin 0
+  padding-bottom 4rem
+  display none
+  position fixed
+  right 0
+  top 0
+  bottom 0
+  z-index $depth-z-index-sticky
+  width 216px
+  transition all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)
+  +IDS_BREAKPOINT_MQ_Large_Min()
+    display flex
+    width 256px
+  +IDS_BREAKPOINT_MQ_ExtraLarge_Min()
+    width 296px
+
+
+  & ul
+    margin 0
+    margin-bottom 2rem
+    padding 0
+    width 100%
+    &::after
+      border-bottom none
+      width 3px
+      height 100%
+      background-color $color-background-dark-beige
+      position absolute
+      left 0
+      top 0
+      z-index 2
+    & li
+      margin-bottom 0
+      & a
+        padding-top 0
+        margin 0
+        display flex !important
+        IDS_TYPOGRAPHY_FontFamily_Sans()
+        font-size $size-font-14
+        line-height $size-line-height-24
+        +IDS_BREAKPOINT_MQ_ExtraSmall_Min()
+          font-size $size-font-14
+        +IDS_BREAKPOINT_MQ_Medium_Min()
+          font-size $size-font-14
+        &:hover
+          IDS_TYPOGRAPHY_FontFamily_SansBold()
+        &::before
+          border-bottom none
+          content ""
+          width 3px
+          height 100%
+          z-index 3
+          background-color $color-background-dark-beige
+          position absolute
+          left 0
+          top 0
+        &.level-1
+          padding-left 1.25rem
+        &.level-2
+          padding-left 1.25rem
+        &.level-3
+          padding-left 2.25rem
+      &:hover
+        &::after
+          border-bottom none
+          content ""
+          width 3px
+          height 100%
+          z-index 3
+          background-color $color-base-brown-200
+          position absolute
+          left 0
+          top 0
+    & li.is-active
+      &::after
+        border-bottom none
+        content ""
+        width 3px
+        height 100%
+        z-index 3
+        background-color $color-accent-blue
+        position absolute
+        left 0
+        top 0

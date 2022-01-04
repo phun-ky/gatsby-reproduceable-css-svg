@@ -1,0 +1,255 @@
+.if.anatomies
+  display flex
+  flex-direction column
+  justify-content center
+  align-items flex-start
+  margin 0
+  padding 0
+  margin-bottom $size-spacing-32
+  +IDS_BREAKPOINT_MQ_Large_Min()
+    margin-bottom $size-spacing-64
+
+  &.column
+    display grid
+    grid-template-columns 100%
+    grid-gap $size-spacing-16 $size-spacing-16
+    +IDS_BREAKPOINT_MQ_ExtraSmall_Min()
+      grid-gap $size-spacing-32 $size-spacing-32
+    +IDS_BREAKPOINT_MQ_Smaller_Min()
+      grid-gap $size-spacing-64 $size-spacing-64
+    +IDS_BREAKPOINT_MQ_Small_Min()
+      grid-template-columns 1fr 1fr
+
+    & .if.anatomy
+      margin-bottom 0 !important
+
+
+.if.anatomies .if.anatomy
+  display flex
+  align-items flex-start
+  justify-content flex-start
+  margin 0
+  padding 0
+  width 100%
+  position relative
+  flex-direction column
+
+
+.if.anatomies .if.anatomy:not(:last-of-type)
+  margin-bottom $size-spacing-32
+  +IDS_BREAKPOINT_MQ_Large_Min()
+    margin-bottom $size-spacing-64
+
+.if.anatomies .if.example
+  width 100%
+  background-color $color-background-lightest-beige
+  display block
+  order 1
+  margin 0
+  +IDS_BREAKPOINT_MQ_Small_Min()
+    width 100%
+    order 1
+
+.if.anatomies .if.example.dark
+  background-color $color-background-beige
+
+.if.anatomies .if.example.darker
+  background-color $color-background-dark-beige
+
+
+.if.anatomies .if.anatomy.row
+  +IDS_BREAKPOINT_MQ_Large_Min()
+    flex-direction row
+    margin-bottom $size-spacing-64
+  & .if.example
+    +IDS_BREAKPOINT_MQ_Large_Min()
+      width 620px
+      background-color $color-background-lightest-beige
+      display block
+      order 1
+      margin 0
+
+
+.if.anatomies figcaption.if.description > ol.if
+  list-style none
+  margin 0
+  counter-reset anatomy
+  padding 0
+  margin-bottom $size-spacing-16
+
+.if.anatomies figcaption.if.description > ol.if > li.if
+  margin-bottom $size-spacing-8
+  padding 0
+  padding-left $size-spacing-48
+  counter-increment anatomy
+  position relative
+
+.if.anatomies figcaption.if.description > ol.if > li.if::before
+  content counter(anatomy, upper-alpha)
+  height $size-24
+  width $size-24
+  display flex
+  position absolute
+  left 0
+  top 50%
+  transform translateY(-50%)
+  border-radius 100%
+  background-color $color-text-brown
+  color $color-background-dark-beige
+  font-weight 600
+  align-items center
+  justify-content center
+  line-height 150%
+  font-size 16px
+  z-index 20
+  IDS_TYPOGRAPHY_FontFamily_SansMedium()
+
+
+.if.anatomy.full > .if.example,
+.if.code-example.full > .if.example{
+  background-color: $color-background-lightest-beige;
+}
+.if.anatomy.full > .if.example > *,
+.if.code-example.full > .if.example > *{
+  width: 1440px;
+  transform: scale(0.6) translateX(-50%);
+  box-shadow: 0 8px 4px -2px rgba(110,98,94, 0.08), 0 20px 32px rgba(110,98,94, 0.24);
+  margin: 0;
+  margin-left: 50%;
+  transform-origin: left top;
+}
+
+.if.anatomy.focus-left > .if.example,
+.if.type.focus-left > .if.example
+  background-color $color-background-lightest-beige
+  overflow hidden
+
+.if.anatomy.focus-left > .if.example > *,
+.if.type.focus-left > .if.example > *
+  width 1440px
+
+.if.anatomy.focus-center > .if.example,
+.if.type.focus-center > .if.example
+  background-color $color-background-lightest-beige
+  overflow hidden
+
+.if.anatomy.focus-center > .if.example > *,
+.if.type.focus-center > .if.example > *
+  width 1440px
+  margin-left 50%
+  transform translateX(-50%)
+
+.if.anatomy.focus-right > .if.example,
+.if.type.focus-right > .if.example
+  background-color $color-background-lightest-beige
+  overflow hidden
+
+.if.anatomy.focus-right > .if.example > *,
+.if.type.focus-right > .if.example > *
+  width 1440px
+  margin-right 50%
+  transform translateX(-50%)
+
+
+.if.anatomies figcaption.if.description > ol.if.anatomy-grid
+  display grid
+  grid-template-columns auto auto auto
+  grid-auto-flow column
+  grid-template-rows auto auto auto auto
+
+
+.if.anatomies .if.anatomy figcaption.if.description
+  padding-left 0
+
+
+.if.anatomies .if.anatomy.manual,
+.if.anatomies .if.anatomy.manual.responsive
+  +IDS_BREAKPOINT_MQ_Large_Min()
+    display grid
+    grid-column auto / span 2
+    grid-template-columns 50% 1fr
+    grid-gap 0 $size-spacing-48
+
+
+.if.anatomies .if.anatomy.responsive
+  display none
+  +IDS_BREAKPOINT_MQ_Smaller_Min()
+    display flex
+
+.if.anatomies .if.anatomy.responsive .if.example > p
+  display none
+
+.if.anatomies .if.anatomy.responsive .if.example
+  border none
+
+.if.anatomies .if.anatomy.responsive .if.example > *:not(p)
+  margin 0 auto
+
+.if.anatomy.iphone > .if.example,
+.if.anatomy.tablet > .if.example
+  background-color grayscale($color-infographic-light-yellow)
+  display flex
+  align-items center
+  justify-content center
+  padding-top 5rem
+  padding-bottom 5rem
+
+.if.anatomy.iphone > .if.example > *:not(p)
+  width 360px
+  height 640px
+  box-shadow $depth-shadow-light-100
+
+.if.anatomy.tablet > .if.example > *:not(p)
+  width 1024px
+  height 768px
+  box-shadow $depth-shadow-light-100
+
+.if.anatomy.tablet.portrait > .if.example > *:not(p)
+  width 768px
+  height 1024px
+  box-shadow $depth-shadow-light-100
+
+.if.anatomy.desktop > .if.example > *:not(p)
+  width 1440px
+  height 900px
+  box-shadow $depth-shadow-light-100
+
+
+
+.if.anatomies figcaption.if.description
+  order 2
+  flex-grow 1
+  IDS_TYPOGRAPHY_Text_Meta()
+  background-color transparent
+  padding $size-spacing-16 0 0
+
+  width 100%
+  & .if.title
+    display inline-block
+    IDS_TYPOGRAPHY_Text_MetaBold()
+
+
+.if.anatomies :not(.preview) figcaption.if.description
+  & > *:not(:last-child),
+  & > .if:not(:last-child)
+    margin-bottom $size-spacing-24
+  & > *:last-child,
+  & > .if:last-child
+    margin-bottom 0
+
+
+.if.anatomies
+  & .if.anatomy
+    &.code
+      padding 0
+      background-color transparent
+
+      & .gatsby-highlight
+        width 100%
+        margin 0
+
+      & .gatsby-highlight > pre[class*="language-"]
+      & pre[class*="language-"]
+        border-bottom-right-radius 0
+        border-bottom-left-radius 0
+        margin 0

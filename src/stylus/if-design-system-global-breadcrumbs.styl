@@ -1,0 +1,40 @@
+.sg.global-breadcrumbs
+  display none
+  position sticky
+  left 0
+  width 100%
+  top 104px
+  border-bottom 1pt solid $color-background-dark-beige
+  height $size-48
+  z-index 2
+  background-color $color-background-lightest-beige
+  padding-left $size-spacing-32
+  +IDS_BREAKPOINT_MQ_Smaller_Min(){
+    display flex
+  }
+  &.hasno-breadcrumbs
+    display none
+
+  & > .if.breadcrumbs
+    position relative
+    top auto
+    left auto
+    bottom auto
+    right auto
+    height 100%
+
+@media screen and (min-width: 960px) {
+  .sg.global-breadcrumbs{
+    display: none;
+  }
+}
+
+
+
+.sg.global-breadcrumbs .if.breadcrumbs > li.if:first-of-type
+  & > a,
+  & > button
+    IDS_ICONS_Icon_Ui_House()
+    width 2rem
+    background-size $size-20 $size-20
+    height 2rem

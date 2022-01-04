@@ -1,0 +1,39 @@
+
+.sg code,
+.sg samp,
+.sg code[class*="language-"],
+.sg pre[class*="language-"]
+  font-family "Menlo for Powerline", "Menlo Regular for Powerline", "DejaVu Sans Mono", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace
+
+.sg pre[class*="language-"]:not(pre[class*="language-bash"])
+  box-sizing border-box
+  padding $size-spacing-32 $size-spacing-32
+  margin 0
+  border-radius $size-16
+
+.sg pre[class*="language-bash"]
+  padding $size-spacing-16
+  margin 0
+  border-radius $size-4
+
+
+.sg pre[class*="language-"]::-webkit-scrollbar
+  background-color #f1ece8
+  width $size-4
+  height $size-4
+
+
+
+.sg pre[class*="language-"]::-webkit-scrollbar-thumb
+  background-color $color-text-light-brown
+  width $size-4
+
+
+.if.example.codepen iframe[src*="codepen.io"]
+  height 100% !important
+  width 100% !important
+
+.sg pre[class*="language-"]
+  overflow-x hidden
+  overflow-y auto
+  max-height 70vh

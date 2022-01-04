@@ -1,0 +1,47 @@
+
+table.sg.table.color > * > tr > *,
+table.sg.table.color > thead > tr > th {
+  background-color: transparent;
+  color $color-text-brown
+  margin: 0;
+  text-align: left;
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 2px 0;
+  border: none;
+}
+
+table.sg.table.color > * > tr > *.sg.palette.tablekey.first{
+  color:#6e625e;
+  width: 6rem;
+  font-size: 15px;
+  text-transform: uppercase;
+
+}
+table.sg.table.color > * > tr > *.sg.palette.tablekey{
+  color:#6e625e;
+  font-size: 15px;
+  text-transform: uppercase;
+  display: none;
+}
+
+@media screen and (min-width: 90rem) {
+  table.sg.table.color > * > tr > *.sg.palette.tablekey{
+    display: table-cell;
+  }
+}
+
+table.sg.table.color > * > tr > *.sg.palette.tablevalue{
+  width: 100%;
+}
+@media screen and (min-width: 90rem) {
+  table.sg.table.color > * > tr > *.sg.palette.tablevalue{
+    width: auto;
+  }
+}
+
+table.sg.table.color > * > tr > *.sg.palette.colorname{
+  text-transform: uppercase;
+  font-variation-settings: "wght" 126;
+  font-size: 15px;
+  color:#6e625e;
+}

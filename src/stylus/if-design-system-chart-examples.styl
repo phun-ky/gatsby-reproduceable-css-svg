@@ -1,0 +1,1568 @@
+
+
+IDS_AXE_Pattern_1($color)
+  background-image linear-gradient(135deg, $color 25%, transparent 25%), linear-gradient(225deg, $color 25%, transparent 25%), linear-gradient(45deg, $color 25%, transparent 25%), linear-gradient(315deg, $color 25%, transparent 25%)
+  background-position 16px 0, 16px 0, 0 0, 0 0
+  background-size $size-icon-16 $size-icon-16
+  background-repeat repeat
+
+IDS_AXE_Pattern_2($color)
+  background repeating-linear-gradient( 45deg, $color, $color 8px, transparent 8px, transparent 24px )
+
+IDS_AXE_Pattern_3($color)
+  background-image linear-gradient(-45deg, transparent, transparent 50%, $color 50%, $color)
+  background-size $size-icon-16 $size-icon-16
+
+IDS_AXE_Pattern_4($color)
+  background-image linear-gradient(135deg, $color 25%, transparent 25%), linear-gradient(225deg, $color 25%, transparent 25%), linear-gradient(45deg, $color 25%, transparent 25%), linear-gradient(315deg, $color 25%, transparent 25%)
+  background-position 8px 0, 8px 0, 0 0, 0 0
+  background-size $size-icon-16 $size-icon-16
+  background-repeat repeat
+
+IDS_AXE_Pattern_5($color)
+  background repeating-linear-gradient( -45deg, $color, $color 8px, transparent 8px, transparent 24px )
+
+IDS_AXE_Pattern_6($color)
+  background-image linear-gradient(0deg, transparent 50%, $color 50%)
+  background-size $size-icon-16 $size-icon-16
+
+IDS_AXE_Pattern_7($color)
+  background-image linear-gradient(to right, $color, $color 8px, transparent 8px, transparent )
+  background-size 16px 100%
+
+IDS_AXE_Pattern_8($color)
+  background-image linear-gradient($color 4px, transparent 4px), linear-gradient(to right, $color 4px, transparent 4px)
+  background-size $size-icon-16 $size-icon-16
+
+
+getCorrectContrastColor($color){
+  $contrastBrown = contrast($color-text-brown, $color).ratio;
+  $contrastLightestBeige = contrast($color-text-lightest-beige, $color).ratio;
+  $contrastLightBrown = contrast($color-text-light-brown, $color).ratio;
+
+  if($contrastBrown >= 5){
+    color $color-text-brown
+  } else if($contrastLightestBeige >= 5){
+    color $color-text-lightest-beige
+  } else if($contrastLightBrown >= 5){
+    color $color-text-light-brown
+  } else {
+    color $color-text-brown
+  }
+}
+
+setCurrentContrastRatio($color)
+  &::before
+    content "N/A"
+    display flex
+    bottom calc(100% + 8px)
+    right 8px
+    position absolute
+    font-size 12px
+    line-height 12px
+    getCurrentContrastRatio($color)
+
+getCurrentContrastRatio($color)
+  $contrastBrown = contrast($color-text-brown, $color).ratio;
+  $contrastLightestBeige = contrast($color-text-lightest-beige, $color).ratio;
+  $contrastLightBrown = contrast($color-text-light-brown, $color).ratio;
+
+  if($contrastBrown >= 5){
+    content "%s" % ("" + $contrastBrown)
+    color #217331
+  } else if($contrastLightestBeige >= 5){
+    content "%s" % ("" + $contrastLightestBeige)
+    color #217331
+  } else if($contrastLightBrown >= 5){
+    content "%s" % ("" + $contrastLightBrown)
+    color #217331
+  } else {
+    content "%s" % ("" + $contrastBrown)
+    if($contrastBrown < 5){
+      color #bb320c
+    } else {
+      color #217331
+    }
+  }
+
+
+
+
+getColorInformation($color)
+  setCurrentContrastRatio($color)
+  background-color $color
+  &::after
+    content ""+$color
+    getCorrectContrastColor($color)
+
+.if.visualization.chart
+  min-height 320px
+
+
+
+
+
+.highcharts-credits{
+  display: none !important;
+}
+
+
+
+.highcharts-axis-labels,
+.highcharts-data-label,
+.highcharts-data-label text, text.highcharts-data-label,
+.highcharts-axis-title{
+  font-family: "If Sans", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  letter-spacing: normal;
+  font-variation-settings: "wght" 85;
+  fill: $color-text-light-brown;
+}
+@supports (display: grid) {
+  .highcharts-axis-labels,
+  .highcharts-axis-title{
+    font-weight: normal;
+    font-variation-settings: 'wght' 78;
+  }
+}
+.highcharts-axis-title
+  display none
+
+.highcharts-container
+  background-color transparent
+  color $color-text-light-brown
+  font-size 16px
+  font-family "If Sans", Arial, sans-serif
+
+.highcharts-legend-item > text
+  color $color-text-light-brown !important
+  font-size 16px !important
+  fill $color-text-light-brown !important
+  font-variation-settings 'wght' 126 !important
+  font-weight normal !important
+  font-family "If Sans", Arial, sans-serif !important
+
+.highcharts-background
+  background-color transparent
+  fill transparent
+
+.highcharts-yaxis .highcharts-axis-line
+  stroke-width 0
+  stroke rgba(110,98,94, 0.2)
+
+.highcharts-xaxis .highcharts-axis-line,
+.highcharts-yaxis-grid .highcharts-grid-line
+  stroke-width 0
+
+.highcharts-xaxis-grid .highcharts-grid-line,
+.highcharts-yaxis-grid .highcharts-grid-line
+  stroke-width 1
+  stroke rgba(110,98,94, 0.2)
+
+.highcharts-tick
+  display none
+
+.highcharts-color-0
+  fill $color-infographic-green
+  stroke $color-infographic-green
+
+.highcharts-color-1
+  fill $color-infographic-yellow
+  stroke $color-infographic-yellow
+
+.highcharts-color-2
+  fill $color-infographic-red
+  stroke $color-infographic-red
+
+.highcharts-color-3
+  fill $color-infographic-blue
+  stroke $color-infographic-blue
+
+.highcharts-color-4
+  fill $color-infographic-dark-green
+  stroke $color-infographic-dark-green
+
+.highcharts-color-5
+  fill $color-infographic-dark-yellow
+  stroke $color-infographic-dark-yellow
+
+.highcharts-color-6
+  fill $color-infographic-dark-red
+  stroke $color-infographic-dark-red
+
+.highcharts-color-7
+  fill $color-infographic-dark-blue
+  stroke $color-infographic-dark-blue
+
+.highcharts-color-8
+  fill $color-infographic-light-green
+  stroke $color-infographic-light-green
+.highcharts-color-9
+  fill $color-infographic-light-yellow
+  stroke $color-infographic-light-yellow
+.highcharts-color-10
+  fill $color-infographic-light-red
+  stroke $color-infographic-light-red
+.highcharts-color-11
+  fill $color-infographic-light-blue
+  stroke $color-infographic-light-blue
+
+
+.spline
+
+  & .highcharts-color-0
+    fill $color-infographic-green
+    stroke $color-infographic-green
+  & .highcharts-color-1
+    fill $color-infographic-red
+    stroke $color-infographic-red
+
+.radial
+
+  & .highcharts-xaxis-grid .highcharts-grid-line,
+  & .highcharts-yaxis-grid .highcharts-grid-line
+    stroke-width 0
+
+
+.highcharts-column-series rect.highcharts-point
+    stroke #e8e0d9
+    stroke-width 1
+
+.pie
+  & .highcharts-data-label-connector
+    &.highcharts-color-0
+      fill transparent
+      stroke $color-infographic-green
+
+    &.highcharts-color-1
+      fill transparent
+      stroke $color-infographic-yellow
+
+    &.highcharts-color-2
+      fill transparent
+      stroke $color-infographic-red
+
+    &.highcharts-color-3
+      fill transparent
+      stroke $color-infographic-blue
+
+    &.highcharts-color-4
+      fill transparent
+      stroke $color-infographic-dark-green
+
+    &.highcharts-color-5
+      fill transparent
+      stroke $color-infographic-dark-yellow
+
+    &.highcharts-color-6
+      fill transparent
+      stroke $color-infographic-dark-red
+
+    &.highcharts-color-7
+      fill transparent
+      stroke $color-infographic-dark-blue
+
+    &.highcharts-color-8
+      fill transparent
+      stroke $color-infographic-light-green
+
+.highcharts-pie-series .highcharts-point
+  stroke-width 0
+
+.highcharts-strong
+  font-weight normal
+  font-variation-settings "wght" 126
+
+.green-shades.light
+  & .highcharts-data-label-connector
+    &.highcharts-color-0
+      stroke darken($color-infographic-green, 40%)
+    &.highcharts-color-1
+      stroke darken($color-infographic-green, 30%)
+    &.highcharts-color-2
+      stroke darken($color-infographic-green, 20%)
+    &.highcharts-color-3
+      stroke darken($color-infographic-green, 10%)
+    &.highcharts-color-4
+      stroke $color-infographic-green
+    &.highcharts-color-5
+      stroke lighten($color-infographic-green, 10%)
+    &.highcharts-color-6
+      stroke lighten($color-infographic-green, 20%)
+    &.highcharts-color-7
+      stroke lighten($color-infographic-green, 30%)
+    &.highcharts-color-8
+      stroke lighten($color-infographic-green, 40%)
+
+  & :not(.highcharts-data-label-connector)
+    &.highcharts-color-0
+      fill darken($color-infographic-green, 40%)
+    &.highcharts-color-1
+      fill darken($color-infographic-green, 30%)
+    &.highcharts-color-2
+      fill darken($color-infographic-green, 20%)
+    &.highcharts-color-3
+      fill darken($color-infographic-green, 10%)
+    &.highcharts-color-4
+      fill $color-infographic-green
+    &.highcharts-color-5
+      fill lighten($color-infographic-green, 10%)
+    &.highcharts-color-6
+      fill lighten($color-infographic-green, 20%)
+    &.highcharts-color-7
+      fill lighten($color-infographic-green, 30%)
+    &.highcharts-color-8
+      fill lighten($color-infographic-green, 40%)
+
+.pie .highcharts-point-select
+  fill #0054f0 !important
+
+.column .highcharts-column-series rect.highcharts-point,
+.area .highcharts-legend-item rect.highcharts-point,
+.area2 .highcharts-legend-item rect.highcharts-point,
+.bar .highcharts-column-series rect.highcharts-point
+  stroke-width 0 !important
+
+
+.area2
+  & .highcharts-series-3
+    fill darken($color-infographic-dark-blue, 20%)
+  & .highcharts-series-2
+    fill lighten($color-infographic-dark-blue, 20%)
+  & .highcharts-series-1
+    fill lighten($color-infographic-dark-blue, 40%)
+  & .highcharts-series-0
+    fill lighten($color-infographic-dark-blue, 60%)
+  & .highcharts-color-3
+    stroke darken($color-infographic-dark-blue, 20%)
+  & .highcharts-color-2
+    stroke lighten($color-infographic-dark-blue, 20%)
+  & .highcharts-color-1
+    stroke lighten($color-infographic-dark-blue, 40%)
+  & .highcharts-color-0
+    stroke lighten($color-infographic-dark-blue, 60%)
+
+
+.highcharts-xaxis .highcharts-axis-line
+  stroke-width 1 !important
+  stroke rgba(110,98,94, 0.2)
+
+.viz-anatomy-chart-1 .highcharts-series
+  display none !important
+
+
+
+.column .highcharts-xaxis-grid .highcharts-grid-line
+  stroke-width 0
+.bar .highcharts-xaxis-grid .highcharts-grid-line
+  stroke-width 0
+
+.bar.compare .highcharts-xaxis .highcharts-axis-line,
+.spline .highcharts-xaxis .highcharts-axis-line
+  stroke-width 0 !important
+
+
+.column .highcharts-xaxis .highcharts-axis-line,
+.bar .highcharts-xaxis .highcharts-axis-line,
+.bar.compare .highcharts-xaxis .highcharts-axis-line,
+.bar.compare .highcharts-yaxis .highcharts-axis-line
+  stroke-width 0 !important
+
+.bar.compare .highcharts-grid.highcharts-yaxis-grid
+  display none
+
+.bar.compare .highcharts-color-0
+  fill #0054f0
+  stroke-width 0
+.bar.compare .highcharts-color-1
+  fill #F1ECE8
+  stroke-width 0
+
+.bar.compare .highcharts-label.highcharts-data-label
+  left -5px !important
+  font-size 18px
+
+.highcharts-title
+  font-size 42px
+  line-height 56px
+  font-variation-settings "wght" 45
+  font-weight normal
+  color $color-text-brown
+
+.bar.compare .highcharts-title
+  color #0054f0
+
+.doughnut.highlight .highcharts-label.highcharts-data-label.highcharts-data-label-color-0
+  font-size 42px
+  line-height 56px
+  font-variation-settings "wght" 45
+  font-weight normal
+  color $color-text-brown
+
+
+.spline.nodots
+
+  & .highcharts-color-0
+    fill $color-infographic-red
+    stroke $color-infographic-red
+  & .highcharts-color-1
+    fill $color-infographic-blue
+    stroke $color-infographic-blue
+.column.sequential-example
+
+  & .highcharts-color-0
+    fill $color-infographic-light-green
+    stroke $color-infographic-light-green
+  & .highcharts-color-1
+    fill $color-infographic-green
+    stroke $color-infographic-green
+  & .highcharts-color-2
+    fill $color-infographic-dark-green
+    stroke $color-infographic-dark-green
+.column:not(.categorical):not(.sequential-example)
+
+  & .highcharts-color-0
+    fill $color-infographic-yellow
+    stroke $color-infographic-yellow
+
+
+
+.doughnut.highlight
+
+  & .highcharts-color-0
+    fill $color-accent-blue
+    stroke $color-accent-blue
+  & .highcharts-color-1
+    fill $color-background-beige
+    stroke $color-background-beige
+
+.pie.highlight
+
+  & .highcharts-color-0
+    fill $color-accent-blue
+    stroke $color-accent-blue
+    background-color $color-accent-blue
+  & .highcharts-color-1
+    fill $color-background-dark-beige
+    stroke $color-background-dark-beige
+    background-color $color-background-dark-beige
+
+
+.highcharts-crosshair-category
+  stroke #e8e0d9
+  stroke-opacity 0.5
+
+
+.if .highcharts-label.highcharts-tooltip:not(span):not(div)
+  fill $color-text-brown
+  stroke $color-text-brown
+  filter none
+
+.if .highcharts-label.highcharts-tooltip > *:not(path)
+  color $color-text-lightest-beige
+  background-color $color-text-brown
+  border none
+  border-radius 0
+  align-items center
+  justify-content center
+  flex-direction column
+  text-align left
+  margin 0
+  z-index 50
+
+.highcharts-tooltip-box
+  stroke-width 0
+  fill $color-text-brown
+  fill-opacity 1
+
+
+.if.visualization.chart
+  & .column.sequential
+    & .highcharts-color-0
+      fill #ffc9a6
+      stroke #ffc9a6
+      & + .highcharts-color-0
+        fill #ffc9a6
+        stroke #ffc9a6
+        & + .highcharts-color-0
+          fill #ffc9a6
+          stroke #ffc9a6
+          & + .highcharts-color-0
+            fill #ffc9a6
+            stroke #ffc9a6
+            & + .highcharts-color-0
+              fill #ffc9a6
+              stroke #ffc9a6
+              & + .highcharts-color-0
+                fill #805c5c
+                stroke #805c5c
+                & + .highcharts-color-0
+                  fill #805c5c
+                  stroke #805c5c
+
+.if.visualization.chart
+  & .spline
+
+    &.color-0
+      & .highcharts-color-0
+        fill $color-infographic-green
+        stroke $color-infographic-green
+      & .highcharts-color-1
+        fill $color-infographic-red
+        stroke $color-infographic-red
+    &.color-1
+      & .highcharts-color-0
+        fill $color-infographic-green
+        stroke $color-infographic-green
+      & .highcharts-color-1
+        fill $color-infographic-yellow
+        stroke $color-infographic-yellow
+.if.visualization.chart
+  & .bar
+
+    &.color-0
+      & .highcharts-color-0
+        fill $color-infographic-yellow
+        stroke $color-infographic-yellow
+    &.color-1
+      & .highcharts-color-0
+        fill $color-infographic-blue
+        stroke $color-infographic-blue
+.if
+  & .column.datatable
+
+    & .highcharts-color-0
+      fill $color-infographic-green
+      stroke $color-infographic-green
+    & .highcharts-color-1
+      fill $color-infographic-yellow
+      stroke $color-infographic-yellow
+    & .highcharts-color-2
+      fill $color-infographic-red
+      stroke $color-infographic-red
+.if.visualization.chart
+  & .column.column-stacked
+
+    &.color-0
+      & .highcharts-color-0
+        fill $color-infographic-green
+        stroke $color-infographic-green
+      & .highcharts-color-1
+        fill $color-infographic-yellow
+        stroke $color-infographic-yellow
+      & .highcharts-color-2
+        fill $color-infographic-red
+        stroke $color-infographic-red
+    &.color-1
+      & .highcharts-color-0
+        fill $color-infographic-yellow
+        stroke $color-infographic-yellow
+    &.color-2
+      & .highcharts-color-0
+        fill $color-infographic-red
+        stroke $color-infographic-red
+
+
+
+.if.data-colors
+  display flex
+  flex-direction row
+  width 100%
+  flex-wrap wrap
+  margin-bottom 4rem
+  &.complementary
+    display grid
+    grid-template-columns 50% 50%
+    grid-gap 0 0
+
+    & .if.data-color
+      width 100%
+
+      &::after
+        transform none
+        position absolute
+        bottom 8px
+        left 8px
+        top auto
+        margin-top 0
+        font-size 24px
+        line-height 24px
+        width 100%
+        font-variation-settings "wght" 72
+
+
+.if.data-colors.legend
+  & .if.data-color
+    padding 8px
+    font-size 14px
+    line-height 18px
+    &.colored
+      &::after,
+      &::before
+        content none !important
+    &::before
+      position relative
+      display flex
+      flex-direction column
+      font-size 14px
+      line-height 18px
+      transform-origin top left
+      transform rotate(-90deg)
+      z-index 1
+      position absolute
+      top 100%
+      left 100%
+      width 8rem
+      height 2rem
+      margin-top 12px
+      margin-left -20px
+      text-align right
+    &.lightBrown
+      color $color-text-lightest-beige
+      &::before
+        content "Fozzie Bear"
+        color $color-text-lightest-beige
+    &.accentBlue
+      color $color-text-lightest-beige
+      &::before
+        content "Megaman Helmet"
+        color $color-text-lightest-beige
+    &.darkBeige
+      &::before
+        content "Stone Harbour"
+    &.beige
+      &::before
+        content "Desert Storm"
+    &.lightBeige
+      &::before
+        content "Valhallan Blizzard"
+    &.lighterBeige
+      &::before
+        content "The Speed Of Light"
+    &.lightestBeige
+      &::before
+        content "Doctor"
+    &.lightYellow
+      &::before
+        content "Swedish Yellow"
+    &.lightRed
+      &::before
+        content "Peach Crayon"
+    &.lightGreen
+      &::before
+        content "Spearmint Water"
+    &.lightBlue
+      &::before
+        content "Gas Giant"
+    &.yellow
+      &::before
+        content "Go Bananas"
+    &.red
+      &::before
+        content "Fresh Salmon"
+    &.green
+      &::before
+        content "Tranquil Teal"
+    &.blue
+      &::before
+        content "Blue Martini"
+    &.darkYellow
+      &::before
+        content "Apple Cinnamon"
+    &.darkRed
+      color $color-text-lightest-beige
+      &::before
+        content "Musk Deer"
+        color $color-text-lightest-beige
+    &.darkGreen
+      &::before
+        content "Little League"
+    &.darkBlue
+      &::before
+        content "Vanity"
+
+.if.data-color
+  min-width 4rem
+  min-height 8rem
+  display block
+  flex-grow 0
+  position relative
+  &::after
+    text-transform uppercase
+    display flex
+    font-size 16px
+    line-height 16px
+    font-variation-settings "wght" 72
+    transform-origin top left
+    transform rotate(-90deg) translate(-50%, -50%)
+    z-index 1
+    position absolute
+    top 50%
+    left 50%
+    width 8rem
+    height 2rem
+    align-items center
+    margin-top -12px
+  &.parent
+    min-width 8rem
+    flex-shrink 0
+    flex-grow 1
+    &::after
+      transform none
+      position absolute
+      bottom 8px
+      left 8px
+      top auto
+      margin-top 0
+      font-size 24px
+      line-height 24px
+      width 100%
+      font-variation-settings "wght" 72
+  &.accentBlue
+    background-color $color-accent-blue
+    &.parent
+      &::after
+        content ""+$color-accent-blue
+        getCorrectContrastColor($color-accent-blue);
+  &.darkBeige
+    background-color $color-background-dark-beige
+    &.parent
+      &::after
+        content ""+$color-background-dark-beige
+        getCorrectContrastColor($color-background-dark-beige);
+  &.beige
+    background-color $color-background-beige
+    &.parent
+      &::after
+        content ""+$color-background-beige
+        getCorrectContrastColor($color-background-beige);
+  &.lightBeige
+    background-color $color-background-light-beige
+    &.parent
+      &::after
+        content ""+$color-background-light-beige
+        getCorrectContrastColor($color-background-light-beige);
+  &.lighterBeige
+    background-color $color-background-lighter-beige
+    &.parent
+      &::after
+        content ""+$color-background-lighter-beige
+        getCorrectContrastColor($color-background-lighter-beige);
+  &.lightestBeige
+    background-color $color-background-lightest-beige
+    &.parent
+      &::after
+        content ""+$color-background-lightest-beige
+        getCorrectContrastColor($color-background-lightest-beige);
+  &.darkYellow
+    background-color $color-infographic-dark-yellow
+    &.parent
+      &::after
+        content ""+$color-infographic-dark-yellow
+        IDS_COLOR_GetCorrectContrastColor($color-infographic-dark-yellow);
+
+    &.colored
+      background-color transparent
+      &.p1
+        IDS_AXE_Pattern_1($color-infographic-dark-yellow)
+      &.p2
+        IDS_AXE_Pattern_2($color-infographic-dark-yellow)
+      &.p3
+        IDS_AXE_Pattern_3($color-infographic-dark-yellow)
+      &.p4
+        IDS_AXE_Pattern_4($color-infographic-dark-yellow)
+      &.p5
+        IDS_AXE_Pattern_5($color-infographic-dark-yellow)
+      &.p6
+        IDS_AXE_Pattern_6($color-infographic-dark-yellow)
+      &.p7
+        IDS_AXE_Pattern_7($color-infographic-dark-yellow)
+      &.p8
+        IDS_AXE_Pattern_8($color-infographic-dark-yellow)
+    &.parent
+      &::after
+        content ""+$color-infographic-dark-yellow
+        IDS_COLOR_GetCorrectContrastColor($color-infographic-dark-yellow);
+
+
+
+
+
+  &.lightBrown
+    background-color $color-text-light-brown
+    &.colored
+      background-color transparent
+      &.p1
+        IDS_AXE_Pattern_1($color-text-light-brown)
+      &.p2
+        IDS_AXE_Pattern_2($color-text-light-brown)
+      &.p3
+        IDS_AXE_Pattern_3($color-text-light-brown)
+      &.p4
+        IDS_AXE_Pattern_4($color-text-light-brown)
+      &.p5
+        IDS_AXE_Pattern_5($color-text-light-brown)
+      &.p6
+        IDS_AXE_Pattern_6($color-text-light-brown)
+      &.p7
+        IDS_AXE_Pattern_7($color-text-light-brown)
+      &.p8
+        IDS_AXE_Pattern_8($color-text-light-brown)
+
+
+
+  &.darkRed
+    background-color $color-infographic-dark-red
+    &.colored
+      background-color transparent
+      &.p1
+        IDS_AXE_Pattern_1($color-infographic-dark-red)
+      &.p2
+        IDS_AXE_Pattern_2($color-infographic-dark-red)
+      &.p3
+        IDS_AXE_Pattern_3($color-infographic-dark-red)
+      &.p4
+        IDS_AXE_Pattern_4($color-infographic-dark-red)
+      &.p5
+        IDS_AXE_Pattern_5($color-infographic-dark-red)
+      &.p6
+        IDS_AXE_Pattern_6($color-infographic-dark-red)
+      &.p7
+        IDS_AXE_Pattern_7($color-infographic-dark-red)
+      &.p8
+        IDS_AXE_Pattern_8($color-infographic-dark-red)
+
+    &.parent
+      &::after
+        content ""+$color-infographic-dark-red
+        IDS_COLOR_GetCorrectContrastColor($color-infographic-dark-red);
+
+
+
+
+  &.darkBlue
+    background-color $color-infographic-dark-blue
+    &.colored
+      background-color transparent
+      &.p1
+        IDS_AXE_Pattern_1($color-infographic-dark-blue)
+      &.p2
+        IDS_AXE_Pattern_2($color-infographic-dark-blue)
+      &.p3
+        IDS_AXE_Pattern_3($color-infographic-dark-blue)
+      &.p4
+        IDS_AXE_Pattern_4($color-infographic-dark-blue)
+      &.p5
+        IDS_AXE_Pattern_5($color-infographic-dark-blue)
+      &.p6
+        IDS_AXE_Pattern_6($color-infographic-dark-blue)
+      &.p7
+        IDS_AXE_Pattern_7($color-infographic-dark-blue)
+      &.p8
+        IDS_AXE_Pattern_8($color-infographic-dark-blue)
+
+    &.parent
+      &::after
+        content ""+$color-infographic-dark-blue
+        IDS_COLOR_GetCorrectContrastColor($color-infographic-dark-blue);
+
+
+
+
+  &.darkBeige
+    background-color $color-background-dark-beige
+    &.colored
+      background-color transparent
+      &.p1
+        IDS_AXE_Pattern_1($color-background-dark-beige)
+      &.p2
+        IDS_AXE_Pattern_2($color-background-dark-beige)
+      &.p3
+        IDS_AXE_Pattern_3($color-background-dark-beige)
+      &.p4
+        IDS_AXE_Pattern_4($color-background-dark-beige)
+      &.p5
+        IDS_AXE_Pattern_5($color-background-dark-beige)
+      &.p6
+        IDS_AXE_Pattern_6($color-background-dark-beige)
+      &.p7
+        IDS_AXE_Pattern_7($color-background-dark-beige)
+      &.p8
+        IDS_AXE_Pattern_8($color-background-dark-beige)
+
+    &.parent
+      &::after
+        content ""+$color-background-dark-beige
+        IDS_COLOR_GetCorrectContrastColor($color-background-dark-beige);
+
+
+  &.darkGreen
+    background-color $color-infographic-dark-green
+    &.colored
+      background-color transparent
+      &.p1
+        IDS_AXE_Pattern_1($color-infographic-dark-green)
+      &.p2
+        IDS_AXE_Pattern_2($color-infographic-dark-green)
+      &.p3
+        IDS_AXE_Pattern_3($color-infographic-dark-green)
+      &.p4
+        IDS_AXE_Pattern_4($color-infographic-dark-green)
+      &.p5
+        IDS_AXE_Pattern_5($color-infographic-dark-green)
+      &.p6
+        IDS_AXE_Pattern_6($color-infographic-dark-green)
+      &.p7
+        IDS_AXE_Pattern_7($color-infographic-dark-green)
+      &.p8
+        IDS_AXE_Pattern_8($color-infographic-dark-green)
+
+    &.parent
+      &::after
+        content ""+$color-infographic-dark-green
+        IDS_COLOR_GetCorrectContrastColor($color-infographic-dark-green);
+
+
+
+
+  &.lightGreen
+    background-color $color-infographic-light-green
+    &.colored
+      background-color transparent
+      &.p1
+        IDS_AXE_Pattern_1($color-infographic-light-green)
+      &.p2
+        IDS_AXE_Pattern_2($color-infographic-light-green)
+      &.p3
+        IDS_AXE_Pattern_3($color-infographic-light-green)
+      &.p4
+        IDS_AXE_Pattern_4($color-infographic-light-green)
+      &.p5
+        IDS_AXE_Pattern_5($color-infographic-light-green)
+      &.p6
+        IDS_AXE_Pattern_6($color-infographic-light-green)
+      &.p7
+        IDS_AXE_Pattern_7($color-infographic-light-green)
+      &.p8
+        IDS_AXE_Pattern_8($color-infographic-light-green)
+
+    &.parent
+      &::after
+        content ""+$color-infographic-light-green
+        IDS_COLOR_GetCorrectContrastColor($color-infographic-light-green);
+
+
+
+  &.lightRed
+    background-color $color-infographic-light-red
+    &.colored
+      background-color transparent
+      &.p1
+        IDS_AXE_Pattern_1($color-infographic-light-red)
+      &.p2
+        IDS_AXE_Pattern_2($color-infographic-light-red)
+      &.p3
+        IDS_AXE_Pattern_3($color-infographic-light-red)
+      &.p4
+        IDS_AXE_Pattern_4($color-infographic-light-red)
+      &.p5
+        IDS_AXE_Pattern_5($color-infographic-light-red)
+      &.p6
+        IDS_AXE_Pattern_6($color-infographic-light-red)
+      &.p7
+        IDS_AXE_Pattern_7($color-infographic-light-red)
+      &.p8
+        IDS_AXE_Pattern_8($color-infographic-light-red)
+
+    &.parent
+      &::after
+        content ""+$color-infographic-light-red
+        IDS_COLOR_GetCorrectContrastColor($color-infographic-light-red);
+
+
+
+
+  &.lightYellow
+    background-color $color-infographic-light-yellow
+    &.colored
+      background-color transparent
+      &.p1
+        IDS_AXE_Pattern_1($color-infographic-light-yellow)
+      &.p2
+        IDS_AXE_Pattern_2($color-infographic-light-yellow)
+      &.p3
+        IDS_AXE_Pattern_3($color-infographic-light-yellow)
+      &.p4
+        IDS_AXE_Pattern_4($color-infographic-light-yellow)
+      &.p5
+        IDS_AXE_Pattern_5($color-infographic-light-yellow)
+      &.p6
+        IDS_AXE_Pattern_6($color-infographic-light-yellow)
+      &.p7
+        IDS_AXE_Pattern_7($color-infographic-light-yellow)
+      &.p8
+        IDS_AXE_Pattern_8($color-infographic-light-yellow)
+
+    &.parent
+      &::after
+        content ""+$color-infographic-light-yellow
+        IDS_COLOR_GetCorrectContrastColor($color-infographic-light-yellow);
+
+
+
+
+
+  &.lightBlue
+    background-color $color-infographic-light-blue
+    &.colored
+      background-color transparent
+      &.p1
+        IDS_AXE_Pattern_1($color-infographic-light-blue)
+      &.p2
+        IDS_AXE_Pattern_2($color-infographic-light-blue)
+      &.p3
+        IDS_AXE_Pattern_3($color-infographic-light-blue)
+      &.p4
+        IDS_AXE_Pattern_4($color-infographic-light-blue)
+      &.p5
+        IDS_AXE_Pattern_5($color-infographic-light-blue)
+      &.p6
+        IDS_AXE_Pattern_6($color-infographic-light-blue)
+      &.p7
+        IDS_AXE_Pattern_7($color-infographic-light-blue)
+      &.p8
+        IDS_AXE_Pattern_8($color-infographic-light-blue)
+
+    &.parent
+      &::after
+        content ""+$color-infographic-light-blue
+        IDS_COLOR_GetCorrectContrastColor($color-infographic-light-blue);
+
+
+  &.blue
+    background-color $color-infographic-blue
+
+    &.colored
+      background-color transparent
+      &.p1
+        IDS_AXE_Pattern_1($color-infographic-blue)
+      &.p2
+        IDS_AXE_Pattern_2($color-infographic-blue)
+      &.p3
+        IDS_AXE_Pattern_3($color-infographic-blue)
+      &.p4
+        IDS_AXE_Pattern_4($color-infographic-blue)
+      &.p5
+        IDS_AXE_Pattern_5($color-infographic-blue)
+      &.p6
+        IDS_AXE_Pattern_6($color-infographic-blue)
+      &.p7
+        IDS_AXE_Pattern_7($color-infographic-blue)
+      &.p8
+        IDS_AXE_Pattern_8($color-infographic-blue)
+    &.parent
+      &::after
+        content ""+$color-infographic-blue
+        IDS_COLOR_GetCorrectContrastColor($color-infographic-blue);
+
+
+  &.darkRed
+    background-color $color-infographic-dark-red
+    &.colored
+      background-color transparent
+      &.p1
+        IDS_AXE_Pattern_1($color-infographic-dark-red)
+      &.p2
+        IDS_AXE_Pattern_2($color-infographic-dark-red)
+      &.p3
+        IDS_AXE_Pattern_3($color-infographic-dark-red)
+      &.p4
+        IDS_AXE_Pattern_4($color-infographic-dark-red)
+      &.p5
+        IDS_AXE_Pattern_5($color-infographic-dark-red)
+      &.p6
+        IDS_AXE_Pattern_6($color-infographic-dark-red)
+      &.p7
+        IDS_AXE_Pattern_7($color-infographic-dark-red)
+      &.p8
+        IDS_AXE_Pattern_8($color-infographic-dark-red)
+
+    &.parent
+      &::after
+        content ""+$color-infographic-dark-red
+        IDS_COLOR_GetCorrectContrastColor($color-infographic-dark-red);
+
+
+
+
+
+  &.red
+    background-color $color-infographic-red
+    &.colored
+      background-color transparent
+      &.p1
+        IDS_AXE_Pattern_1($color-infographic-red)
+      &.p2
+        IDS_AXE_Pattern_2($color-infographic-red)
+      &.p3
+        IDS_AXE_Pattern_3($color-infographic-red)
+      &.p4
+        IDS_AXE_Pattern_4($color-infographic-red)
+      &.p5
+        IDS_AXE_Pattern_5($color-infographic-red)
+      &.p6
+        IDS_AXE_Pattern_6($color-infographic-red)
+      &.p7
+        IDS_AXE_Pattern_7($color-infographic-red)
+      &.p8
+        IDS_AXE_Pattern_8($color-infographic-red)
+
+    &.parent
+      &::after
+        content ""+$color-infographic-red
+        IDS_COLOR_GetCorrectContrastColor($color-infographic-red);
+
+
+  &.green
+    background-color $color-infographic-green
+    &.colored
+      background-color transparent
+      &.p1
+        IDS_AXE_Pattern_1($color-infographic-green)
+      &.p2
+        IDS_AXE_Pattern_2($color-infographic-green)
+      &.p3
+        IDS_AXE_Pattern_3($color-infographic-green)
+      &.p4
+        IDS_AXE_Pattern_4($color-infographic-green)
+      &.p5
+        IDS_AXE_Pattern_5($color-infographic-green)
+      &.p6
+        IDS_AXE_Pattern_6($color-infographic-green)
+      &.p7
+        IDS_AXE_Pattern_7($color-infographic-green)
+      &.p8
+        IDS_AXE_Pattern_8($color-infographic-green)
+
+    &.parent
+      &::after
+        content ""+$color-infographic-green
+        IDS_COLOR_GetCorrectContrastColor($color-infographic-green);
+
+
+
+
+  &.yellow
+    background-color $color-infographic-yellow
+
+    &.colored
+      background-color transparent
+      &.p1
+        IDS_AXE_Pattern_1($color-infographic-yellow)
+      &.p2
+        IDS_AXE_Pattern_2($color-infographic-yellow)
+      &.p3
+        IDS_AXE_Pattern_3($color-infographic-yellow)
+      &.p4
+        IDS_AXE_Pattern_4($color-infographic-yellow)
+      &.p5
+        IDS_AXE_Pattern_5($color-infographic-yellow)
+      &.p6
+        IDS_AXE_Pattern_6($color-infographic-yellow)
+      &.p7
+        IDS_AXE_Pattern_7($color-infographic-yellow)
+      &.p8
+        IDS_AXE_Pattern_8($color-infographic-yellow)
+
+    &.parent
+      &::after
+        content ""+$color-infographic-yellow
+        IDS_COLOR_GetCorrectContrastColor($color-infographic-yellow);
+
+.if.alert-banner.fatal
+
+  background-color #bb320c
+  color $color-text-lightest-beige
+  &::after
+    content none
+  &::before
+    background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctitle%3Ec info%3C/title%3E%3Cg class=%27nc-icon-wrapper%27 stroke-linecap=%27square%27 stroke-linejoin=%27miter%27 stroke-width=%271.5%27 fill=%27%23faf9f7%27 stroke=%27%23faf9f7%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2715%27 fill=%27none%27 stroke=%27%23faf9f7%27 stroke-miterlimit=%2710%27/%3E%3Cline data-color=%27color-2%27 x1=%2716%27 y1=%2713%27 x2=%2716%27 y2=%2724%27 fill=%27none%27 stroke-miterlimit=%2710%27/%3E%3Ccircle data-color=%27color-2%27 data-stroke=%27none%27 cx=%2716%27 cy=%277.5%27 r=%271.5%27 stroke=%27none%27/%3E%3C/g%3E%3C/svg%3E');
+
+
+.if.data-color,
+.if.data-colors.legend .if.data-color
+  &.monochrome-100
+    getColorInformation($color-data-monochrome-100)
+    &.parent
+      &::before
+        content "Ardcoat"
+        getCorrectContrastColor($color-data-monochrome-100)
+      &::after
+        getCorrectContrastColor($color-data-monochrome-100)
+  &.monochrome-200
+    getColorInformation($color-data-monochrome-200)
+    &.parent
+      &::before
+        content "Gallery Grey"
+        getCorrectContrastColor($color-data-monochrome-200)
+      &::after
+        getCorrectContrastColor($color-data-monochrome-200)
+  &.monochrome-300
+    getColorInformation($color-data-monochrome-300)
+    &.parent
+      &::before
+        content "Ghostly"
+        getCorrectContrastColor($color-data-monochrome-300)
+      &::after
+        getCorrectContrastColor($color-data-monochrome-300)
+  &.monochrome-400
+    getColorInformation($color-data-monochrome-400)
+    &.parent
+      &::before
+        content "Rocket Metallic"
+        getCorrectContrastColor($color-data-monochrome-400)
+      &::after
+        getCorrectContrastColor($color-data-monochrome-400)
+  &.monochrome-500
+    color $color-text-lightest-beige
+    &::after
+      color $color-text-lightest-beige
+      content ""+$color-data-monochrome-500
+    &::before
+      position relative
+      display flex
+      flex-direction column
+      font-size 14px
+      line-height 18px
+      transform-origin top left
+      transform rotate(-90deg)
+      z-index 1
+      position absolute
+      top 100%
+      left 100%
+      width 8rem
+      height 2rem
+      margin-top 12px
+      margin-left -20px
+      text-align right
+      content "Fozzie Bear"
+      color $color-text-lightest-beige
+  &.monochrome-600
+    getColorInformation($color-data-monochrome-600)
+    &.parent
+      &::before
+        content "Weathered Brown"
+        getCorrectContrastColor($color-data-monochrome-600)
+      &::after
+        getCorrectContrastColor($color-data-monochrome-600)
+  &.monochrome-700
+    getColorInformation($color-data-monochrome-700)
+    &.parent
+      &::before
+        content "Pitch"
+        getCorrectContrastColor($color-data-monochrome-700)
+      &::after
+        getCorrectContrastColor($color-data-monochrome-700)
+  &.monochrome-800
+    getColorInformation($color-data-monochrome-800)
+    &.parent
+      &::before
+        content "Bokara Grey"
+        getCorrectContrastColor($color-data-monochrome-800)
+      &::after
+        getCorrectContrastColor($color-data-monochrome-800)
+  &.monochrome-900
+    getColorInformation($color-data-monochrome-900)
+    &.parent
+      &::before
+        content "Dark Veil"
+        getCorrectContrastColor($color-data-monochrome-900)
+      &::after
+        getCorrectContrastColor($color-data-monochrome-900)
+
+
+
+.if.data-colors.legend.chromatic
+  display grid
+  grid-template-rows repeat(3, 8rem)
+  grid-template-columns repeat(4, 8rem)
+  & > .if.data-color:nth-child(1)
+    order 1
+  & > .if.data-color:nth-child(2)
+    order 5
+  & > .if.data-color:nth-child(3)
+    order 9
+  & > .if.data-color:nth-child(4)
+    order 2
+  & > .if.data-color:nth-child(5)
+    order 6
+  & > .if.data-color:nth-child(6)
+    order 10
+  & > .if.data-color:nth-child(7)
+    order 3
+  & > .if.data-color:nth-child(8)
+    order 7
+  & > .if.data-color:nth-child(9)
+    order 11
+  & > .if.data-color:nth-child(10)
+    order 4
+  & > .if.data-color:nth-child(11)
+    order 8
+  & > .if.data-color:nth-child(12)
+    order 12
+
+
+
+.highcharts-exporting-group
+  display none !important
+
+.highcharts-a11y-proxy-button
+  background-color transparent !important
+  left auto !important
+  right 0 !important
+  top 0 !important
+  opacity 1 !important
+  display inline-block
+  border none
+  box-shadow none
+  margin 0
+  padding 0
+  background-clip border-box
+  background-size $size-icon-24 $size-icon-24
+  background-repeat no-repeat
+  background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctitle%3Emenu 8%3C/title%3E%3Cg class='nc-icon-wrapper' stroke-linecap='square' stroke-linejoin='miter' stroke-width='1.5' fill='%23331e11' stroke='%23331e11'%3E%3Cline data-color='color-2' fill='none' stroke-miterlimit='10' x1='2' y1='16' x2='30' y2='16'/%3E%3Cline fill='none' stroke='%23331e11' stroke-miterlimit='10' x1='2' y1='7' x2='30' y2='7'/%3E%3Cline fill='none' stroke='%23331e11' stroke-miterlimit='10' x1='2' y1='25' x2='30' y2='25'/%3E%3C/g%3E%3C/svg%3E")
+  user-select none
+  position relative
+  z-index 0
+  background-position center center
+  cursor pointer
+  height 48px !important
+  width 48px !important
+  max-width none
+  min-width $size-48 !important
+  flex-grow 0
+  flex-shrink 0
+  text-decoration none
+  transition all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)
+  overflow hidden
+  text-indent -99999px
+
+
+@keyframes openX
+  0%
+    display none
+    opacity 0
+  1%
+    display flex
+    opacity 0
+    transform scaleX(0)
+  50%
+    display flex
+    transform scaleX(1)
+  100%
+    opacity 1
+    display flex
+    transform scaleX(1)
+
+
+@keyframes openY
+  0%
+    display none
+    opacity 0
+  1%
+    display flex
+    opacity 0
+    transform scaleY(0)
+  100%
+    opacity 1
+    display flex
+    transform scaleY(1)
+
+.highcharts-contextmenu
+  top 48px !important
+  right 8px !important
+  left auto !important
+  background-color $color-background-lightest-beige !important
+  color $color-text-brown !important
+  position absolute !important
+  z-index 100 !important
+  list-style none !important
+  min-width 18rem !important
+  border-radius 0 !important
+  border 1px solid $color-background-dark-beige !important
+  transform-origin right center !important
+  max-width 320px !important
+  padding 0 !important
+  box-shadow 0 5px 10px 0 rgba($color-text-brown, 0.05)  !important
+
+.highcharts-contextmenu[aria-hidden="false"]
+  display flex !important
+  animation openX 0.3s cubic-bezier(0.4, 0.0, 0.2, 1)
+  & > ul.highcharts-menu
+    transform-origin 100% 0
+    animation openY 0.4s cubic-bezier(0.4, 0.0, 0.2, 1)
+
+.highcharts-menu
+  list-style none !important
+  flex-direction column !important
+  justify-content flex-start !important
+  margin 0 !important
+  background-color $color-background-lightest-beige !important
+  z-index 100
+  border-radius 0 !important
+  flex-grow 1 !important
+  padding 16px 0 !important
+  min-width 7rem !important
+  position relative
+  border none !important
+  box-shadow none !important
+
+  & li.highcharts-menu-item
+    font-family "If Sans", arial, sans-serif !important
+    margin-bottom 0 !important
+    padding 0 !important
+    justify-content flex-start !important
+    display flex !important
+    align-items center !important
+    justify-content flex-start !important
+    min-width 10rem !important
+    position relative !important
+    color $color-text-brown !important
+    text-decoration none !important
+    white-space nowrap !important
+    padding-top 0 !important
+    padding-bottom 0 !important
+    height 32px !important
+    cursor pointer !important
+    line-height 32px !important
+    text-overflow ellipsis !important
+    border none !important
+    background-color transparent !important
+    text-align left !important
+    flex-grow 0 !important
+    flex-shrink 0 !important
+    padding-right 24px !important
+    text-decoration none !important
+    overflow hidden !important
+    padding-left 24px !important
+    transition all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important
+    font-size 1rem !important
+    line-height 24px !important
+    letter-spacing normal !important
+    font-variation-settings "wght" 82 !important
+    &:hover,
+    &:active
+      background-color $color-background-dark-beige !important
+      color $color-text-brown !important
+      text-decoration none !important
+
+.highcharts-menu hr
+  padding 0 !important
+  background-color transparent !important
+  margin 8px 24px !important
+  pointer-events none !important
+  border none !important
+  border-top 1px solid $color-background-dark-beige !important
+
+
+.if.visualization.chart
+
+  [stroke="#d1cac3"],
+  [stroke="#7ab3a7"]
+    stroke-width 0 !important
+
+  [fill="#123123"]
+    display none !important
+
+
+
+.protanopia {
+ -webkit-filter:url(#protanopia) grayscale(0)!important;
+ filter:url(#protanopia) grayscale(0)!important
+}
+.protanomaly {
+ -webkit-filter:url(#protanomaly) grayscale(0)!important;
+ filter:url(#protanomaly) grayscale(0)!important
+}
+.deuteranopia {
+ -webkit-filter:url(#deuteranopia) grayscale(0)!important;
+ filter:url(#deuteranopia) grayscale(0)!important
+}
+.deuteranomaly {
+ -webkit-filter:url(#deuteranomaly) grayscale(0)!important;
+ filter:url(#deuteranomaly) grayscale(0)!important
+}
+.tritanopia {
+ -webkit-filter:url(#tritanopia) grayscale(0)!important;
+ filter:url(#tritanopia) grayscale(0)!important
+}
+.tritanomaly {
+ -webkit-filter:url(#tritanomaly) grayscale(0)!important;
+ filter:url(#tritanomaly) grayscale(0)!important
+}
+.achromatopsia {
+ -webkit-filter:url(#achromatopsia) grayscale(0)!important;
+ filter:url(#achromatopsia) grayscale(0)!important
+}
+.achromatomaly {
+ -webkit-filter:url(#achromatomaly) grayscale(0)!important;
+ filter:url(#achromatomaly) grayscale(0)!important
+}
+.grayscale {
+ -webkit-filter:grayscale(100%)!important;
+ filter:grayscale(100%)!important
+}
+.vision-loss-moderate {
+ -webkit-filter:blur(1px)!important;
+ filter:blur(1px)!important
+}
+.vision-loss-severe {
+ -webkit-filter:blur(10px)!important;
+ filter:blur(10px)!important
+}
+.vision-blindness {
+ background-color:#fff!important;
+ -webkit-filter:brightness(0)!important;
+ filter:brightness(0)!important
+}
+#access-filter {
+ border:0;
+ clip:rect(1px,1px,1px,1px);
+ -webkit-clip-path:inset(50%);
+ clip-path:inset(50%);
+ height:1px;
+ margin:-1px;
+ width:1px;
+ overflow:hidden;
+ position:absolute!important;
+ word-wrap:normal!important
+}
+
+
+
+.if.p1
+  IDS_AXE_Pattern_1(rgba($color-text-lightest-beige, 0.4))
+
+.if.p2
+  IDS_AXE_Pattern_2(rgba($color-text-lightest-beige, 0.4))
+
+.if.p3
+  IDS_AXE_Pattern_3(rgba($color-text-lightest-beige, 0.4))
+
+.if.p4
+  IDS_AXE_Pattern_4(rgba($color-text-lightest-beige, 0.4))
+
+.if.p5
+  IDS_AXE_Pattern_5(rgba($color-text-lightest-beige, 0.4))
+
+.if.p6
+  IDS_AXE_Pattern_6(rgba($color-text-lightest-beige, 0.4))
+
+
+.if.p7
+  IDS_AXE_Pattern_7(rgba($color-text-lightest-beige, 0.4))
+
+.if.p8
+  IDS_AXE_Pattern_8(rgba($color-text-lightest-beige, 0.4))

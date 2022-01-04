@@ -1,0 +1,210 @@
+
+.sg.header.nav{
+  display none
+  align-items center
+  justify-content flex-end
+  margin-left auto
+}
+
+@media screen and (min-width 960px) {
+
+  .sg.header.nav{
+    display flex
+  }
+}
+
+.sg.header.menu{
+  justify-content flex-end
+  flex-grow 1
+  height 100%
+  align-items center
+  display none
+  list-style none
+  margin 0
+  padding 0
+}
+.sg.header.menu > li
+  padding 0
+  margin 0
+  position relative
+
+.sg.header.menu > li:not(:last-of-type)
+  margin-right $size-spacing-48
+
+.sg.header.menu > li > a,
+.sg.header.menu > li > button
+  flex-direction column
+  padding 0
+  transition all 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+  background-color transparent
+  border none
+  IDS_TYPOGRAPHY_Text_Body()
+  cursor pointer
+  color $color-text-brown
+  text-decoration none
+  height 100%
+  display flex
+  align-items center
+  justify-content center
+
+
+.sg.header.menu > li > a,
+.sg.header.menu > li > button
+  &:hover,
+  &.is-hovered
+    text-decoration underline
+    color $color-accent-blue
+
+
+.sg.header.menu > li.is-active > a,
+.sg.header.menu > li.is-active > button{
+  font-family "If Sans Bold", Arial, sans-serif
+}
+
+.sg.header.menu > li.is-active > a,
+.sg.header.menu > li.is-active > button{
+  font-weight normal
+  font-variation-settings 'wght' 126
+}
+
+
+.sg.header.menu > li > a::before,
+.sg.header.menu > li > button::before{
+  content attr(data-title)
+  font-family "If Sans Bold", Arial, sans-serif
+  white-space nowrap
+  display block
+  overflow hidden
+  height 0
+  visibility hidden
+  color transparent
+}
+.sg.header.menu > li > a::before,
+.sg.header.menu > li > button::before{
+  font-weight normal
+  font-variation-settings "wgth" 126
+}
+
+@media screen and (min-width 960px) {
+  .sg.header.menu{
+    display flex
+  }
+}
+
+.sg.header.menu .if.menu{
+  max-height 50vh
+  overflow-y scroll
+  right 0
+  left auto
+}
+
+
+.sg.header.link{
+  background-position 1rem center
+  background-repeat no-repeat
+  background-size contain
+  padding-left 3.5rem
+  text-decoration none
+  color $color-text-brown
+  font-size 18px
+}
+
+
+
+
+.sg.if.global-menu-drawer
+  display none
+  position absolute
+  right -24px
+  top 104px
+  max-height calc(100vh - 104px)
+  background-color #faf9f7
+  overflow-y auto
+  scrollbar-width thin
+  border-left 1pt solid #e8e0d9
+  box-shadow 0 16px 24px 2px rgba(51,30,17, 0.14), 0 6px 30px 5px rgba(51,30,17, 0.12),
+    0 8px 10px -5px rgba(51,30,17, 0.2)
+  +IDS_BREAKPOINT_MQ_ExtraSmall_Min()
+    right -32px
+
+
+
+.sg.if.global-menu-drawer::-webkit-scrollbar
+  background-color #f1ece8
+  width $size-4
+  height $size-16
+
+
+
+.sg.if.global-menu-drawer::-webkit-scrollbar-thumb
+  background-color $color-text-light-brown
+  width $size-4
+
+
+
+.sg.if.global-menu-drawer.is-open{
+  display block
+}
+
+
+@media screen and (min-width 960px) {
+  .sg.if.global-menu-drawer{
+    display none
+  }
+}
+
+
+
+
+.sg.if.global-menu-control{
+  display flex
+  width 4rem
+  height 100%
+  align-items center
+  justify-content center
+  margin-left auto
+  position absolute
+  right 0
+  top 0
+
+}
+
+@media screen and (min-width 960px) {
+  .sg.if.global-menu-control{
+    display none
+  }
+}
+
+.sg.global-menu-button{
+  height 100%
+  width 100%
+  background-position center center
+  background-size $size-icon-32 $size-icon-32
+  background-image url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctitle%3Emenu 8%3C/title%3E%3Cg class=%27nc-icon-wrapper%27 stroke-linecap=%27square%27 stroke-linejoin=%27miter%27 stroke-width=%271.5%27 fill=%27%23331e11%27 stroke=%27%23331e11%27%3E%3Cline data-color=%27color-2%27 fill=%27none%27 stroke-miterlimit=%2710%27 x1=%272%27 y1=%2716%27 x2=%2730%27 y2=%2716%27/%3E%3Cline fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27 x1=%272%27 y1=%277%27 x2=%2730%27 y2=%277%27/%3E%3Cline fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27 x1=%272%27 y1=%2725%27 x2=%2730%27 y2=%2725%27/%3E%3C/g%3E%3C/svg%3E")
+  background-repeat no-repeat
+  background-color transparent
+  border none
+  cursor pointer
+
+}
+.sg.global-menu-button.is-open{
+  background-image url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctitle%3Ee remove%3C/title%3E%3Cg class=%27nc-icon-wrapper%27 stroke-linecap=%27square%27 stroke-linejoin=%27miter%27 stroke-width=%271.5%27 fill=%27%23331e11%27 stroke=%27%23331e11%27%3E%3Cline fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27 x1=%2727%27 y1=%275%27 x2=%275%27 y2=%2727%27/%3E%3Cline fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27 x1=%2727%27 y1=%2727%27 x2=%275%27 y2=%275%27/%3E%3C/g%3E%3C/svg%3E")
+}
+
+
+
+.sg.header.menu > li.is-parent > a,
+.sg.header.menu > li.is-parent > button
+  &:focus
+    IDS_UTIL_PseudoStates_Focus()
+
+.sg.header.menu > li.is-parent > a,
+.sg.header.menu > li.is-parent > button
+  &:focus:not(:focus-visible)
+    outline none
+    outline-offset 0
+
+.sg.header.menu > li.is-parent > a,
+.sg.header.menu > li.is-parent > button
+  &:focus-visible
+    IDS_UTIL_PseudoStates_Focus()

@@ -1,0 +1,58 @@
+
+.sg.spec-missing::before {
+  content: "Missing spec";
+  display: block;
+  background: red;
+  text-transform: uppercase;
+  font-variation-settings: "wght" 126;
+  font-size: 12px;
+  padding: 0.25rem 0.45rem;
+  border-radius: 0;
+  top: 1rem;
+  right: 1rem;
+  position: absolute;
+  color: #faf9f7;
+  z-index: 10;
+}
+
+
+.sg.not-ready::before {
+  content: "Not ready";
+  display: block;
+  background: #fcc74f;
+  text-transform: uppercase;
+  font-variation-settings: "wght" 126;
+  font-size: 12px;
+  padding: 0.25rem 0.45rem;
+  border-radius: 0;
+  top: 1rem;
+  right: 1rem;
+  position: absolute;
+  color $color-text-brown
+  z-index: 10;
+}
+
+.sg.tryme{
+  pointer-events: initial !important;
+  position: relative;
+  user-select: initial !important;
+  -moz-user-select: initial !important;
+  -webkit-user-select: initial !important;
+}
+
+.sg.tryme::before {
+  content: "Live demo";
+  display: block;
+  background: #0054f0;
+  text-transform: uppercase;
+  font-variation-settings: "wght" 126;
+  font-size: 12px;
+  line-height: 28px;
+  padding: 0.25rem 0.45rem;
+  border-radius: 0;
+  top: 1rem;
+  right: 1rem;
+  position: absolute;
+  color: #faf9f7;
+  z-index: 10;
+}

@@ -1,0 +1,284 @@
+@require '@ids-core/icons/src/variables/stylus/variables.styl'
+
+.sg.browsers
+  display grid
+  padding $size-spacing-32
+  grid-gap $size-spacing-32
+  grid-template-columns repeat(auto-fit, minmax(3rem, 1fr))
+
+.sg.browser.icon
+  max-width 3rem
+  height 3rem
+
+.sg.section-npm-link,
+.sg.section-npm-link:visited,
+.sg.section-npm-link:hover
+  margin-left $size-spacing-16 !important
+  margin-bottom 0
+
+
+.sg.section-npm-link::after
+  content none !important
+
+.sg.hidden
+  clip rect(1px, 1px, 1px, 1px)
+  height 0.0625rem
+  margin 0
+  overflow hidden
+  position absolute
+  width 0.0625rem
+
+.sg.responsive
+  border none
+  height 100%
+  width 100%
+
+.sg.device-iphone, .sg.device-iphone.device-portrait
+  width 375px
+
+.sg.device-iphone.device-landscape
+  width 667px
+
+.sg.device-ipad, .sg.device-ipad.device-portrait
+  width 768px
+
+.sg.device-ipad.device-landscape
+  width 1024px
+
+.sg.device-mac
+  width 1920px
+
+.sg[class*="device-"] > div > *:not(.content)
+  pointer-events none
+
+.sg.arrow
+  display block
+  height 40vh
+  width 2pt
+  background-color $color-accent-blue
+  position absolute
+  left 15%
+  top 50%
+  z-index 1
+  transform translateY(-50%)
+
+.sg.arrow::after
+  content ""
+  width 0
+  height 0
+  border-left $size-spacing-12 solid transparent
+  border-right $size-spacing-12 solid transparent
+  border-bottom $size-spacing-12 solid $color-accent-blue
+  position absolute
+  top $size-spacing-12 * -1
+  left 50%
+  transform translateX(-50%)
+
+.sg.arrow::before
+  content ""
+  width 0
+  height 0
+  border-left $size-spacing-12 solid transparent
+  border-right $size-spacing-12 solid transparent
+  border-top $size-spacing-12 solid $color-accent-blue
+  position absolute
+  top 100%
+  left 50%
+  transform translateX(-50%)
+
+.sg.animation
+  pointer-events initial !important
+
+.sg.animation *
+  animation-play-state running
+
+.sg.animation:hover *
+  animation-play-state paused
+
+.sg.edit-link
+  display none
+
+.sg.edit-this-section-link:hover
+  background-image url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctitle%3Ed edit%3C/title%3E%3Cg class=%27nc-icon-wrapper%27 stroke-linecap=%27square%27 stroke-linejoin=%27miter%27 stroke-width=%272%27 fill=%27%23331e11%27 stroke=%27%23331e11%27%3E%3Cpolyline points=%2713 6 2 6 2 30 26 30 26 19%27 fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27/%3E%3Cpolygon data-color=%27color-2%27 points=%2716 20 10 22 12 16 26 2 30 6 16 20%27 fill=%27none%27 stroke-miterlimit=%2710%27/%3E%3Cline data-cap=%27butt%27 data-color=%27color-2%27 x1=%2722%27 y1=%276%27 x2=%2726%27 y2=%2710%27 fill=%27none%27 stroke-miterlimit=%2710%27 stroke-linecap=%27butt%27/%3E%3C/g%3E%3C/svg%3E")
+  color $color-text-brown
+
+.sg.edit-this-section-link,
+.sg.edit-this-section-link:active,
+.sg.edit-this-section-link:visited
+  background-image url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctitle%3Ed edit%3C/title%3E%3Cg class=%27nc-icon-wrapper%27 stroke-linecap=%27square%27 stroke-linejoin=%27miter%27 stroke-width=%272%27 fill=%27%236e625e%27 stroke=%27%236e625e%27%3E%3Cpolyline points=%2713 6 2 6 2 30 26 30 26 19%27 fill=%27none%27 stroke=%27%236e625e%27 stroke-miterlimit=%2710%27/%3E%3Cpolygon data-color=%27color-2%27 points=%2716 20 10 22 12 16 26 2 30 6 16 20%27 fill=%27none%27 stroke-miterlimit=%2710%27/%3E%3Cline data-cap=%27butt%27 data-color=%27color-2%27 x1=%2722%27 y1=%276%27 x2=%2726%27 y2=%2710%27 fill=%27none%27 stroke-miterlimit=%2710%27 stroke-linecap=%27butt%27/%3E%3C/g%3E%3C/svg%3E")
+  display none
+  background-repeat no-repeat
+  padding 0
+  margin 0
+  background-size $size-icon-16 $size-icon-16
+  background-position center center
+  IDS_TYPOGRAPHY_FontFamily_Sans()
+  margin-left auto
+  font-size 14px
+  line-height $size-16
+  letter-spacing normal
+  font-variation-settings 'wght' 78
+  height $size-24
+  width $size-24
+  align-items center
+  justify-content flex-start
+  text-decoration none
+  color $color-text-light-brown
+  overflow hidden
+  text-indent -999999px
+  +IDS_BREAKPOINT_MQ_Small_Min()
+    padding-left $size-spacing-24
+    background-position left top 7px
+    height $size-32
+    width auto
+    text-indent 0
+    display inline-flex
+    margin-top 2rem
+
+
+.sg.edit-this-section-link:hover
+  text-decoration underline
+
+.sg.edit-this-section-link::after
+  content none !important
+
+.if.sidebar-menu.pageNavigation ul li
+  &.bug
+    &::after,
+    &::before
+      content none
+  & .sg.reportBug-link,
+  & .sg.reportBug-link:visited,
+  & .sg.reportBug-link:active
+    color $color-text-light-brown
+  & .sg.reportBug-link,
+  & .sg.reportBug-link:visited,
+  & .sg.reportBug-link:active,
+  & .sg.reportBug-link:hover
+    padding-left 0
+    margin-top 1rem
+    IDS_TYPOGRAPHY_FontFamily_Sans()
+    &::after,
+    &::before
+      content none
+
+  & .sg.reportBug-link:hover
+    text-decoration underline
+    color $color-accent-blue
+    & > .if.icon
+      background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' stroke-width='1.5' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%230054f0' stroke-miterlimit='10'%3E%3Cpath d='M5.29 10H4a3 3 0 01-3-3V6m4.29 12H4a3 3 0 00-3 3v1M8 6.255V5a4 4 0 014-4h0a4 4 0 014 4v1.255'/%3E%3Cpath stroke-linecap='square' d='M5 14H1'/%3E%3Cpath d='M18.71 10H20a3 3 0 003-3V6m-4.29 12H20a3 3 0 013 3v1'/%3E%3Cpath stroke-linecap='square' d='M19 14h4M19 16a7 7 0 01-14 0v-4a7 7 0 0114 0z'/%3E%3C/g%3E%3C/svg%3E")
+
+.sg.reportBug-link > .if.icon
+  background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' stroke-width='1.5' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%236e625e' stroke-miterlimit='10'%3E%3Cpath d='M5.29 10H4a3 3 0 01-3-3V6m4.29 12H4a3 3 0 00-3 3v1M8 6.255V5a4 4 0 014-4h0a4 4 0 014 4v1.255'/%3E%3Cpath stroke-linecap='square' d='M5 14H1'/%3E%3Cpath d='M18.71 10H20a3 3 0 003-3V6m-4.29 12H20a3 3 0 013 3v1'/%3E%3Cpath stroke-linecap='square' d='M19 14h4M19 16a7 7 0 01-14 0v-4a7 7 0 0114 0z'/%3E%3C/g%3E%3C/svg%3E")
+  background-repeat no-repeat
+  background-size $size-icon-16 $size-icon-16
+  background-position center center
+  width $size-16
+  height $size-16
+  position relative
+  display inline-block
+  margin-right 0.5rem
+
+
+
+
+
+/* Helpers for floating action button component */
+
+
+#back-to-top-animation2.if.back-to-top.is-visible
+  animation ifKeyframesBackToTopAppearInBottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.2s infinite forwards
+
+#back-to-top-animation4.if.back-to-top.is-visible
+  animation ifKeyframesBackToTopAppearInBottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite forwards reverse
+
+
+
+@keyframes ifKeyframesBackToTopAppearInBottom
+  0%
+    display none
+    opacity 0
+    bottom 0px
+  25%
+    display block
+    opacity 0
+    bottom 0px
+  50%
+    opacity 1
+    bottom 64px
+    display block
+  75%
+    display block
+    opacity 1
+    bottom 64px
+  90%
+    display block
+    opacity 1
+    bottom 64px
+  91%
+    display block
+    opacity 0
+    bottom 64px
+  100%
+    display none
+    opacity 0
+    bottom 64px
+
+
+[class*="spacing-cube"].if
+  white-space: nowrap;
+  font-size: 12px;
+  background-color: rgba(0,84,240, 0.15);
+  color: #331e11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  position: absolute;
+  width: auto;
+
+[class*="spacing-cube"].if
+  &::before
+    content ""
+    height 100%
+    display block
+    background-color $color-accent-blue
+    position absolute
+    left 0
+    top 50%
+    transform translateY(-50%)
+
+.if.spacing-cube-16
+  padding: 0 8px 0 calc(16px + 8px);
+  height: 16px;
+  &::before
+    height $size-16
+    width $size-16
+
+.if.spacing-cube-24
+  padding: 0 8px 0 calc(24px + 8px);
+  height: 24px;
+  &::before
+    height $size-24
+    width $size-24
+
+.if.spacing-cube-24.left
+  padding: 0 calc(24px + 8px) 0 8px;
+
+  &::before
+    left auto
+    right 0
+
+.if.spacing-cube-32
+  padding: 0 8px 0 calc(32px + 8px);
+  height: 32px;
+  &::before
+    height $size-32
+    width $size-32
+
+.if.spacing-cube-64
+  padding: 0 8px 0 calc(64px + 8px);
+  height: 64px;
+  &::before
+    height $size-64
+    width $size-64

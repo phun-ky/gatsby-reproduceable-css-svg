@@ -1,0 +1,54 @@
+
+
+
+.sg.drawer
+  background-color #f1ece8
+  display none
+  padding-left $size-spacing-56
+  margin 0
+  width 216px
+  transition all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)
+  position fixed
+  top 0
+  bottom 0
+  z-index $depth-z-index-sticky
+  padding-top calc(104px + 3rem)
+  left 0
+  scrollbar-width thin
+  padding-bottom 0
+  --ids-scrollbar-width 16px
+  +IDS_BREAKPOINT_MQ_Medium_Min()
+    display flex
+    flex-direction column
+    width calc(216px + var(--ids-scrollbar-width))
+  +IDS_BREAKPOINT_MQ_Large_Min()
+    width 256px
+  +IDS_BREAKPOINT_MQ_ExtraLarge_Min()
+    width 296px
+
+
+
+.sg.drawer > .if.sidebar-menu
+  overflow-y auto
+  padding-bottom 10rem
+  display flex
+  flex-direction column
+  flex-grow 1
+  animation none
+  transform none
+
+  & ul
+    animation none !important
+    transform none
+
+
+.sg.drawer > .if.sidebar-menu::-webkit-scrollbar
+  background-color #f1ece8
+  width $size-4
+  height $size-16
+
+
+
+.sg.drawer > .if.sidebar-menu::-webkit-scrollbar-thumb
+  background-color $color-text-light-brown
+  width $size-4

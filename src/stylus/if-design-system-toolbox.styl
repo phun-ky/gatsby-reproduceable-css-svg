@@ -1,0 +1,131 @@
+.if.toolbox
+  background-color $color-background-lightest-beige
+  height 3rem
+  display none
+  align-items center
+  justify-content flex-end
+  position absolute
+  left 0
+  width calc(100% - 6pt)
+  border-top 0.25rem solid $color-background-light-beige
+  margin 0
+  z-index $depth-z-index-popover
+  +IDS_BREAKPOINT_MQ_Small_Min()
+    display flex
+
+
+.if.toolbox
+  & a.if.preview
+    margin-right auto
+    height $size-48
+    width auto
+    display flex
+    align-items center
+    padding-left 3.25rem
+    text-decoration none
+    color $color-text-brown
+    background-size $size-icon-24 $size-icon-24
+    background-repeat no-repeat
+    background-position left 1rem center
+
+
+.if.toolbox
+  & a.if.preview
+    &::after,
+    &::before
+      content none
+
+
+.if.types .if.toolbox
+  & a.if.preview
+    background-image url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctitle%3Epreview%3C/title%3E%3Cg class=%27nc-icon-wrapper%27 stroke-linecap=%27square%27 stroke-linejoin=%27miter%27 stroke-width=%271.5%27 fill=%27%23331e11%27 stroke=%27%23331e11%27%3E%3Cpath d=%27M1.409,17.182a1.936,1.936,0,0,1-.008-2.37C3.422,12.162,8.886,6,16,6c7.02,0,12.536,6.158,14.585,8.81a1.937,1.937,0,0,1,0,2.38C28.536,19.842,23.02,26,16,26S3.453,19.828,1.409,17.182Z%27 fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27/%3E%3Ccircle data-color=%27color-2%27 cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27none%27 stroke-miterlimit=%2710%27/%3E%3C/g%3E%3C/svg%3E")
+
+
+.if.toolbox
+  & a.if.preview
+    &:hover,
+    &.is-hovered
+      background-image url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctitle%3Epreview%3C/title%3E%3Cg class=%27nc-icon-wrapper%27 stroke-linecap=%27square%27 stroke-linejoin=%27miter%27 stroke-width=%271.5%27 fill=%27%230054f0%27 stroke=%27%230054f0%27%3E%3Cpath d=%27M1.409,17.182a1.936,1.936,0,0,1-.008-2.37C3.422,12.162,8.886,6,16,6c7.02,0,12.536,6.158,14.585,8.81a1.937,1.937,0,0,1,0,2.38C28.536,19.842,23.02,26,16,26S3.453,19.828,1.409,17.182Z%27 fill=%27none%27 stroke=%27%230054f0%27 stroke-miterlimit=%2710%27/%3E%3Ccircle data-color=%27color-2%27 cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27none%27 stroke-miterlimit=%2710%27/%3E%3C/g%3E%3C/svg%3E")
+
+
+.if.toolbox
+  & button.if.toolbox-background-trigger
+    margin-left auto
+    background-size $size-icon-24 $size-icon-24
+    background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' stroke-width='1.5' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%23331e11' stroke-linecap='square' stroke-miterlimit='10'%3E%3Cpath d='M2 30 30 2'/%3E%3Cpath d='M2 22 22 2' data-color='color-2'/%3E%3Cpath d='M2 14 14 2'/%3E%3Cpath d='m2 6 4-4M10 30l20-20' data-color='color-2'/%3E%3Cpath d='m18 30 12-12'/%3E%3Cpath d='m26 30 4-4' data-color='color-2'/%3E%3C/g%3E%3C/svg%3E")
+
+
+.if.toolbox
+  & button.if.toolbox-background-trigger
+    &:hover,
+    &.is-hovered
+      background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' stroke-width='1.5' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%230054f0' stroke-linecap='square' stroke-miterlimit='10'%3E%3Cpath d='M2 30 30 2'/%3E%3Cpath d='M2 22 22 2' data-color='color-2'/%3E%3Cpath d='M2 14 14 2'/%3E%3Cpath d='m2 6 4-4M10 30l20-20' data-color='color-2'/%3E%3Cpath d='m18 30 12-12'/%3E%3Cpath d='m26 30 4-4' data-color='color-2'/%3E%3C/g%3E%3C/svg%3E")
+
+
+.if.toolbox
+  & button.if.toolbox-tools-trigger
+    background-size $size-icon-24 $size-icon-24
+    background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' stroke-width='1.5' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%23331e11' stroke-linecap='square' stroke-miterlimit='10'%3E%3Cpath d='m8 10-6 6 6 6M24 10l6 6-6 6'/%3E%3Cpath d='m12 27 8-22' data-color='color-2'/%3E%3C/g%3E%3C/svg%3E")
+
+
+.if.toolbox
+  & button.if.toolbox-tools-trigger
+    &:hover,
+    &.is-hovered
+      background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' stroke-width='1.5' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%230054f0' stroke-linecap='square' stroke-miterlimit='10'%3E%3Cpath d='m8 10-6 6 6 6M24 10l6 6-6 6'/%3E%3Cpath d='m12 27 8-22' data-color='color-2'/%3E%3C/g%3E%3C/svg%3E")
+
+
+.if.toolbox
+  & .if.toolbox-menu-container,
+  & .if.toolbox-background-container
+    position relative
+    width $size-48
+    height $size-48
+
+
+.if.toolbox
+  & .if.toolbox-menu-container,
+  & .if.toolbox-background-container
+    & > .if.icon-button
+      width $size-48
+      height $size-48
+      background-size $size-icon-24 $size-icon-24
+
+
+.if.toolbox
+  & > a
+    &:hover,
+    &.is-hovered
+      cursor pointer
+      color $color-interaction-dark-blue
+
+
+.if.toolbox
+  & .codepen
+  & .codesandbox
+  & .jsfiddle
+  & .copy
+    background-position left 1.5rem center
+    background-repeat no-repeat
+    background-size $size-20 $size-20
+    padding-left 3.25rem
+
+
+.if.toolbox
+  & .codepen
+    background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23331e11' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.06 41.732L32 60.932l28.94-19.2V22.268L32 3.068l-28.94 19.2zm57.878 0L32 22.268 3.06 41.732m0-19.463L32 41.47l28.94-19.2M32 3.068v19.2m0 19.463v19.2' stroke-width='4'/%3E%3C/svg%3E")
+
+
+.if.toolbox
+  & .codesandbox
+    background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 296' fill='%23331e11'%3E%3Cpath d='M115.498 261.088v-106.61L23.814 101.73v60.773L65.81 186.85v45.7l49.688 28.54zm23.814.627l50.605-29.151V185.78l42.269-24.495v-60.011l-92.874 53.621v106.82zm80.66-180.887l-48.817-28.289-42.863 24.872-43.188-24.897-49.252 28.667 91.914 52.882 92.206-53.235zM0 222.212V74.495L127.987 0 256 74.182v147.797l-128.016 73.744L0 222.212z'/%3E%3C/svg%3E")
+
+
+.if.toolbox
+  & .jsfiddle
+    background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 33' stroke='%23331e11'%3E%3Cg stroke-width='2.5' fill='none' fill-rule='evenodd'%3E%3Cpath d='M23.4888889,20.543316 C21.4404656,18.4187374 19.0750303,15.6666667 16.4832014,15.6666667 C13.8721947,15.6666667 11.7555556,17.6366138 11.7555556,20.0666667 C11.7555556,22.4967196 13.8721947,24.4666667 16.4832014,24.4666667 C18.8347252,24.4666667 19.9845474,23.0125628 20.6429148,22.312473' id='Oval-1' stroke-linecap='round'%3E%3C/path%3E%3Cpath d='M22.5111111,19.5900174 C24.5595344,21.7145959 26.9249697,24.4666667 29.5167986,24.4666667 C32.1278053,24.4666667 34.2444444,22.4967196 34.2444444,20.0666667 C34.2444444,17.6366138 32.1278053,15.6666667 29.5167986,15.6666667 C27.1652748,15.6666667 26.0154526,17.1207706 25.3570852,17.8208603' id='Oval-1-Copy' stroke-linecap='round'%3E%3C/path%3E%3Cpath d='M45,22.7331459 C45,19.1499462 42.7950446,16.079593 39.6628004,14.7835315 C39.6774469,14.5246474 39.7003932,14.2674038 39.7003932,14.0035978 C39.7003932,6.82243304 33.8412885,1 26.611593,1 C21.3985635,1 16.9102123,4.03409627 14.8051788,8.41527616 C13.7828502,7.62878013 12.503719,7.15547161 11.1134367,7.15547161 C7.77825654,7.15547161 5.07450503,9.84159999 5.07450503,13.1544315 C5.07450503,13.7760488 5.16938207,14.3779791 5.3477444,14.9418479 C2.74863428,16.4787471 1,19.2867709 1,22.5105187 C1,27.3287502 4.89630545,31.2367856 9.72803666,31.31094 L36.3341301,31.3109406 C41.1201312,31.3406346 45,27.4870665 45,22.7331459 L45,22.7331459 Z' stroke-linejoin='round'%3E%3C/path%3E%3C/g%3E%3C/svg%3E")
+
+
+.if.toolbox
+  & .copy
+    background-image url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctitle%3Esingle copy 04%3C/title%3E%3Cg class=%27nc-icon-wrapper%27 stroke-linecap=%27square%27 stroke-linejoin=%27miter%27 stroke-width=%271.5%27 fill=%27%23331e11%27 stroke=%27%23331e11%27%3E%3Crect x=%273%27 y=%275%27 fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27 width=%2722%27 height=%2726%27/%3E%3Cline fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27 x1=%278%27 y1=%2712%27 x2=%2720%27 y2=%2712%27/%3E%3Cline fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27 x1=%278%27 y1=%2718%27 x2=%2720%27 y2=%2718%27/%3E%3Cline fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27 x1=%278%27 y1=%2724%27 x2=%2712%27 y2=%2724%27/%3E%3Cpolyline data-color=%27color-2%27 fill=%27none%27 stroke-miterlimit=%2710%27 points=%27 6,1 29,1 29,28 %27/%3E%3C/g%3E%3C/svg%3E")

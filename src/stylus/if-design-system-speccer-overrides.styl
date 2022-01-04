@@ -1,0 +1,54 @@
+/*
+.sg.if
+
+  .if.overlay .dissection.outline:not(.full):not(.enclose),
+  .if.video .dissection.outline:not(.full):not(.enclose)
+    background-color $color-infographic-red
+    color $color-text-lightest-beige
+    border-color $color-infographic-red
+
+  .if.overlay .dissection.outline::after,
+  .if.video .dissection.outline::after
+    background-color $color-infographic-red
+
+  .dissection
+    background-color $color-background-dark-beige
+    color $color-infographic-red
+    border 1pt solid $color-infographic-red
+    font-weight normal
+    z-index 10000 !important
+
+  .dissection.outline:not(.full):not(.enclose)
+    background-color $color-infographic-red
+    color $color-text-lightest-beige
+
+  .dissection::after
+    background-color $color-infographic-red
+
+  .dissection.button-icon::before
+    border 1pt solid $color-infographic-red
+
+  .dissection.button-icon::after,
+  .dissection.button-outline::after,
+  .dissection.button-center::after
+    background-color $color-infographic-red
+
+  .dissection.outline.full
+    color $color-infographic-red
+    border-color $color-infographic-red
+    &::before
+      background-color $color-infographic-red
+    &::after
+      background-color $color-infographic-red
+      color $color-text-lightest-beige
+
+  .dissection.outline.enclose
+    color $color-infographic-red
+    border-color $color-infographic-red
+    &::before
+      background-color $color-infographic-red
+    &::after
+      background-color $color-infographic-red
+      color $color-text-lightest-beige
+
+*/

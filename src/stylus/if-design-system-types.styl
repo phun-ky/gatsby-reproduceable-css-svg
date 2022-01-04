@@ -1,0 +1,205 @@
+.if.types
+  display grid
+  grid-template-columns 100%
+  margin 0
+  padding 0
+  grid-gap $size-64 $size-32
+  margin-bottom $size-spacing-32
+  +IDS_BREAKPOINT_MQ_Large_Min()
+    margin-bottom $size-spacing-64
+
+
+.if.types .if.type
+  overflow hidden
+  grid-template-columns 100%
+  grid-gap 0 $size-32
+  display grid
+  margin 0
+  padding 0
+  width 100%
+  position relative
+  +IDS_BREAKPOINT_MQ_Large_Min()
+    grid-template-columns 50% 1fr
+
+
+.if.types .if.example
+  width 100%
+  background-color $color-background-lightest-beige
+  display block
+  order 1
+  margin 0
+  margin-bottom $size-spacing-32
+  flex-grow 0
+  flex-shrink 0
+  +IDS_BREAKPOINT_MQ_Large_Min()
+    margin-bottom 0
+
+
+
+.if.types .if.type.column
+  display flex
+  flex-direction column
+
+
+
+.if.types.small-grid
+  grid-template-columns repeat(auto-fit, minmax(240px, 1fr))
+  display grid
+  grid-gap 1rem
+
+
+.if.types.small-grid .if.type.column
+  margin 0
+
+
+.if.types .if.example.airy,
+.if.code-examples .if.example.airy,
+.if.anatomies .if.example.airy
+  padding-top $size-spacing-24
+  padding-bottom $size-spacing-24
+  padding-left $size-spacing-24
+  padding-right $size-spacing-24
+  +IDS_BREAKPOINT_MQ_ExtraSmall_Min()
+    padding-top $size-spacing-24
+    padding-bottom $size-spacing-24
+    padding-left $size-spacing-32
+    padding-right $size-spacing-32
+  +IDS_BREAKPOINT_MQ_Smaller_Min()
+    padding-top $size-spacing-32
+    padding-bottom $size-spacing-32
+    padding-left $size-spacing-48
+    padding-right $size-spacing-48
+  +IDS_BREAKPOINT_MQ_Small_Min()
+    padding-top $size-spacing-32
+    padding-bottom $size-spacing-32
+    padding-left $size-spacing-48
+    padding-right $size-spacing-48
+  +IDS_BREAKPOINT_MQ_Medium_Min()
+    padding-top $size-spacing-48
+    padding-bottom $size-spacing-48
+    padding-left $size-spacing-64
+    padding-right $size-spacing-64
+  +IDS_BREAKPOINT_MQ_Large_Min()
+    padding-top $size-spacing-64
+    padding-bottom $size-spacing-64
+    padding-left $size-spacing-88
+    padding-right $size-spacing-88
+
+
+  &.grey
+    background-color $color-background-lightest-beige
+
+.if.types figcaption.if.description
+  order 2
+  width 100%
+  flex-grow 1
+  IDS_TYPOGRAPHY_Text_Body()
+  & .if.title
+    display inline-block
+    IDS_TYPOGRAPHY_Heading_Smallest()
+
+.if.types :not(.preview) figcaption.if.description
+  & > *:not(:last-child),
+  & > .if:not(:last-child)
+    margin-bottom $size-spacing-24
+  & > *:last-child,
+  & > .if:last-child
+    margin-bottom 0
+
+.if.types figcaption.if.description
+  & p
+    max-width 72ch
+
+
+.if.types .if.type.column.responsive .if.example
+  display none
+  +IDS_BREAKPOINT_MQ_Smaller_Min()
+    display flex
+
+
+.if.types .if.type.responsive .if.description
+  +IDS_BREAKPOINT_MQ_Smaller_Min()
+    padding-top $size-spacing-16
+
+.if.types .if.type.responsive
+  display none
+  +IDS_BREAKPOINT_MQ_Smaller_Min()
+    display flex
+    flex-direction column
+
+.if.types .if.type.responsive .if.example
+  border none
+
+.if.types .if.type.responsive .if.example > *:not(p)
+  margin 0 auto
+
+.if.type.iphone > .if.example,
+.if.type.mobile > .if.example,
+.if.type.tablet > .if.example
+  background-color grayscale($color-infographic-light-yellow)
+  display flex
+  align-items center
+  justify-content center
+  padding-top 5rem
+  padding-bottom 5rem
+
+.if.type.iphone > .if.example > *:not(p),
+.if.type.mobile > .if.example > *:not(p)
+  box-shadow $depth-shadow-light-400
+
+.if.type.iphone > .if.example > *:not(p),
+.if.type.mobile.medium > .if.example > *:not(p),
+.if.type.mobile > .if.example > *:not(p)
+  width 375px
+  height 667px
+
+.if.type.mobile.small > .if.example > *:not(p)
+  width 320px
+  height 568px
+
+.if.type.mobile.large > .if.example > *:not(p)
+  width 414px
+  height 736px
+
+.if.type.tablet > .if.example > *:not(p)
+  width 768px
+  height 1024px
+
+.if.type.tablet.horizontal > .if.example > *:not(p)
+  width 1024px
+  height 768px
+
+.if.type.tablet.large > .if.example > *:not(p)
+  width 800px
+  height 1280px
+
+.if.type.tablet.large.horizontal > .if.example > *:not(p)
+  width 1280px
+  height 800px
+
+.if.types.types-grid
+  display grid
+  grid-template-columns 100%
+  grid-gap $size-24 $size-24
+  +IDS_BREAKPOINT_MQ_ExtraSmall_Min()
+    grid-gap $size-32 $size-32
+  +IDS_BREAKPOINT_MQ_Smaller_Min()
+    grid-gap $size-40 $size-40
+  +IDS_BREAKPOINT_MQ_Small_Min()
+    grid-template-columns 1fr 1fr
+
+  & .if.types
+    grid-template-columns 1fr
+
+
+.if.types .if.example.dark
+  background-color $color-background-beige
+
+.if.types .if.example.darker
+  background-color $color-background-dark-beige
+
+
+.if.example.airy.highlight
+  display flex
+  justify-content center
+  align-items center

@@ -1,0 +1,95 @@
+
+table.sg {
+  background-color: transparent;
+  margin: 0;
+  margin-bottom: 1rem;
+  padding: 0;
+  border-collapse: collapse;
+  max-width: 100%;
+  box-shadow: none;
+  width: 100%;
+  table-layout: fixed;
+  font-family: "If Sans", Arial, sans-serif;
+  font-weight: normal;
+}
+
+table.sg.table.color{
+  max-width: 30rem;
+  width: 100%;
+  margin: 0;
+}
+table.sg > * > tr,
+table.sg > thead > th {
+  margin: 0;
+  padding: 0;
+  font-family: "If Sans", Arial, sans-serif;
+  font-weight: normal;
+}
+table.sg > thead > tr > th {
+  font-variation-settings: "wght" 126;
+  vertical-align: bottom;
+  padding-top: 1.4rem;
+  border: none;
+  font-family: "If Sans", Arial, sans-serif;
+  font-weight: normal;
+}
+
+table.sg > thead > tr > th:empty:first-child {
+  border-right: 0.0625rem solid;
+}
+
+table.sg > tbody > tr > th:first-child {
+  border-right: 0.0625rem solid;
+  font-variation-settings: "wght" 126;
+}
+table.sg > thead > tr > th:empty:last-child,
+table.sg > tbody > tr > th:last-child {
+  border-right: none;
+}
+table.sg > tfoot > tr > * {
+  vertical-align: top;
+  font-variation-settings: "wght" 126;
+  padding-bottom: 1.4rem;
+  font-family: "If Sans", Arial, sans-serif;
+  font-weight: normal;
+}
+table.sg > tfoot > tr:first-child > * {
+  border-top: 0.0625rem solid;
+}
+table.sg > tbody > tr > * {
+  vertical-align: top;
+  border-bottom: 1pt solid;
+}
+
+table.sg.table.color > tbody > tr > * {
+  vertical-align: top;
+  border: none;
+}
+
+table.sg > tbody > tr:last-child > * {
+  border-bottom: none;
+}
+table.sg > * > tr > *,
+table.sg > thead > tr > th {
+  background-color: transparent;
+  color $color-text-brown
+  margin: 0;
+  text-align: left;
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 15px 20px;
+  font-family: "If Sans", Arial, sans-serif;
+  font-weight: normal;
+}
+
+table.sg.plain{
+  margin: 0;
+  background-color: transparent;
+}
+
+table.if.plain > tbody > tr > * {
+  vertical-align: middle;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  text-align: center;
+}

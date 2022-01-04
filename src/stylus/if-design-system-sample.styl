@@ -1,0 +1,56 @@
+
+
+.sg.figure.sample {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.sg.figure.sample.centered{
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 960px) {
+  .sg.figure.sample.emphasize,
+  .sg.figure.sample.emphasize{
+    background-color: $color-background-lightest-beige;
+    padding: 3rem;
+  }
+  .sg.figure.sample.emphasize > .sg.example{
+    padding: 0;
+    overflow: auto;
+  }
+  .sg.emphasize figcaption.sg.figure.caption{
+    color $color-text-brown
+    padding-top: 1rem;
+
+  }
+}
+
+.sg.figure.sample{
+  border-radius: 0;
+  box-shadow: none;
+  color $color-text-brown
+}
+
+
+
+.sg.figure.sample.full,
+.if.type.full > .if.example{
+  background-color: $color-background-lightest-beige;
+  margin-bottom 0 !important
+  overflow hidden
+}
+.sg.figure.sample.full > .if.example,
+.if.type.full > .if.example > *
+  +IDS_BREAKPOINT_MQ_Medium_Min()
+    width 1440px
+    transform scale(0.6) translateX(-50%)
+    box-shadow 0 8px 4px -2px rgba(110,98,94, 0.08), 0 20px 32px rgba(110,98,94, 0.24)
+    margin 0
+    margin-left 50%
+    transform-origin left top

@@ -1,0 +1,686 @@
+:root
+  --card-height 200px
+  --card-radial-height 400px
+
+.sg.documentation .if.crosslink.page-link::after
+  background-image url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctitle%3Earrow right%3C/title%3E%3Cg class=%27nc-icon-wrapper%27 stroke-linecap=%27square%27 stroke-linejoin=%27miter%27 stroke-width=%271.5%27 fill=%27%23331e11%27 stroke=%27%23331e11%27%3E%3Cline data-cap=%27butt%27 data-color=%27color-2%27 fill=%27none%27 stroke-miterlimit=%2710%27 x1=%272%27 y1=%2716%27 x2=%2730%27 y2=%2716%27 stroke-linecap=%27butt%27/%3E%3Cpolyline fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27 points=%2721,7 30,16 21,25 %27/%3E%3C/g%3E%3C/svg%3E") !important
+
+
+.sg.documentation .if.crosslink.external-link::after
+  background-image url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctitle%3Eshare%3C/title%3E%3Cg class=%27nc-icon-wrapper%27 stroke-linecap=%27square%27 stroke-linejoin=%27miter%27 stroke-width=%271.5%27 fill=%27%23331e11%27 stroke=%27%23331e11%27%3E%3Cpolyline points=%2725 19 25 30 2 30 2 7 10 7%27 fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27/%3E%3Cpath data-cap=%27butt%27 data-color=%27color-2%27 d=%27M13,20V18A10,10,0,0,1,23,8h7%27 fill=%27none%27 stroke-miterlimit=%2710%27 stroke-linecap=%27butt%27/%3E%3Cpolyline data-color=%27color-2%27 points=%2724 14 30 8 24 2%27 fill=%27none%27 stroke-miterlimit=%2710%27/%3E%3C/g%3E%3C/svg%3E")
+
+
+
+
+.sg.documentation .if.shortcuts.navigation .if.shortcut
+  background-image none
+  padding-left $size-spacing-32
+
+
+.sg.documentation .if.shortcuts.navigation .if.shortcut.next::after
+  background-image url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctitle%3Earrow right%3C/title%3E%3Cg class=%27nc-icon-wrapper%27 stroke-linecap=%27square%27 stroke-linejoin=%27miter%27 stroke-width=%271.5%27 fill=%27%23331e11%27 stroke=%27%23331e11%27%3E%3Cline data-cap=%27butt%27 data-color=%27color-2%27 fill=%27none%27 stroke-miterlimit=%2710%27 x1=%272%27 y1=%2716%27 x2=%2730%27 y2=%2716%27 stroke-linecap=%27butt%27/%3E%3Cpolyline fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27 points=%2721,7 30,16 21,25 %27/%3E%3C/g%3E%3C/svg%3E")
+
+.sg.documentation .if.shortcuts.navigation .if.shortcut.next
+  padding-left $size-spacing-32
+
+
+
+
+.sg.documentation .if.shortcuts.navigation .if.shortcut.previous
+  padding-left $size-spacing-32
+  justify-content flex-end
+
+
+.sg.documentation .if.shortcuts.navigation .if.shortcut.previous::after
+  right auto
+  left $size-spacing-24
+  background-image url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctitle%3Earrow left%3C/title%3E%3Cg class=%27nc-icon-wrapper%27 stroke-linecap=%27square%27 stroke-linejoin=%27miter%27 stroke-width=%271.5%27 fill=%27%23331e11%27 stroke=%27%23331e11%27%3E%3Cline data-cap=%27butt%27 data-color=%27color-2%27 fill=%27none%27 stroke-miterlimit=%2710%27 x1=%2730%27 y1=%2716%27 x2=%272%27 y2=%2716%27 stroke-linecap=%27butt%27/%3E%3Cpolyline fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27 points=%2711,25 2,16 11,7 %27/%3E%3C/g%3E%3C/svg%3E") !important
+
+
+
+
+.sg.documentation .sg.if.heading
+  margin-bottom $size-spacing-32
+  display flex
+  align-items center
+
+
+
+
+.sg.documentation hr.if
+  border none
+  width 100%
+  height 1pt
+  background-color $color-background-dark-beige
+  margin-top $size-spacing-32
+  margin-bottom $size-spacing-32
+
+
+.sg.if .sg.if.block.poc
+  flex-grow 1
+
+.sg.if .if.sections:not(.child-navigation-footer) .sg.if.block:not(footer):last-of-type
+  margin-bottom 0
+  padding-bottom 0
+
+.sg.if.main
+  display flex
+  flex-direction column
+
+
+  &.grail
+    padding-left $size-spacing-24
+    padding-right $size-spacing-24
+    +IDS_BREAKPOINT_MQ_ExtraSmall_Min()
+      padding-left $size-spacing-32
+      padding-right $size-spacing-32
+    +IDS_BREAKPOINT_MQ_Smaller_Min()
+      padding-left $size-spacing-48
+      padding-right $size-spacing-48
+    +IDS_BREAKPOINT_MQ_Small_Min()
+      padding-left $size-spacing-56
+      padding-right $size-spacing-56
+    +IDS_BREAKPOINT_MQ_Medium_Min()
+      padding-left calc(180px + 56px + 56px)
+    +IDS_BREAKPOINT_MQ_Large_Min()
+      grid-gap $size-spacing-56 $size-spacing-56
+      display grid
+      padding-left calc(200px + 56px + 56px)
+      grid-template-columns minmax(968px, auto) 200px
+    +IDS_BREAKPOINT_MQ_ExtraLarge_Min()
+      padding-left calc(240px + 56px + 56px)
+      grid-template-columns minmax(968px, 1160px) 240px
+    +IDS_BREAKPOINT_MQ_Xxl_Min()
+      padding-left calc(240px + 56px + 56px)
+      grid-template-columns minmax(968px, 1280px) 240px
+
+    //   grid-template-columns 180px calc((var(--if-layout-helper-across-column-width) * 6) + (var(--if-layout-helper-across-gutter-width) * 9)) 180px
+    //   grid-gap var(--if-layout-helper-across-column-width) var(--if-layout-helper-across-column-width)
+    // +IDS_BREAKPOINT_MQ_ExtraLarge_Min()
+    //   grid-template-columns 180px calc((var(--if-layout-helper-across-column-width) * 6) + (var(--if-layout-helper-across-gutter-width) * 11)) 180px
+    //   grid-gap var(--if-layout-helper-across-column-width) var(--if-layout-helper-across-column-width)
+
+
+.sg.documentation h3.sg.if.heading.large
+  padding-bottom 1rem
+  border none
+
+
+.sg figcaption.if.description > table.if
+  margin 0
+
+
+.if.cards.components .if.component-card .if.image
+  pointer-events none
+  user-select none
+  background-color $color-background-lightest-beige
+  display flex
+  align-items center
+  justify-content center
+  height 200px
+  position relative
+
+
+
+#resources-icons-icon-list
+  flex-grow 1
+
+#resources-icons-search,
+#resources-icons-icons
+  flex-grow 0
+
+
+#resources-icons-icon-list + footer.if.block
+  flex-grow 0
+
+
+.if.banner.blog
+  background-color $color-background-lighter-beige
+
+
+.if.cards.components
+  list-style none
+  grid-template-columns 100%
+  +IDS_BREAKPOINT_MQ_ExtraSmall_Min()
+    grid-template-columns repeat(auto-fill, minmax(240px, 1fr))
+  +IDS_BREAKPOINT_MQ_Smaller_Min()
+    grid-template-columns repeat(auto-fill, minmax(240px, 1fr))
+  +IDS_BREAKPOINT_MQ_Medium_Min()
+    grid-template-columns repeat(auto-fill, minmax(240px, 1fr))
+
+.if.component-card
+  text-decoration none
+  position relative
+  color $color-text-brown
+
+.if.component-card:focus-within
+  IDS_UTIL_PseudoStates_Focus()
+  & > a.if.standalone
+    &:focus
+      outline none
+    &:focus:not(:focus-visible)
+      outline none
+    &:focus-visible
+      outline none
+
+.if.component-card > a.if.standalone
+  position static
+  &::before
+    content ''
+    inset 0 0 0 0
+    position absolute
+    z-index 1
+
+.sg.if.text.layout.columns
+  display grid
+  margin-bottom $size-spacing-64
+  grid-template-columns 100%
+  grid-gap $size-spacing-24
+  +IDS_BREAKPOINT_MQ_ExtraSmall_Min()
+    grid-gap $size-spacing-32
+  +IDS_BREAKPOINT_MQ_Smaller_Min()
+    grid-gap $size-spacing-40
+    grid-template-columns 100%
+  +IDS_BREAKPOINT_MQ_Small_Min()
+    grid-template-columns 100%
+  +IDS_BREAKPOINT_MQ_Medium_Min()
+    grid-template-columns 1fr 1fr
+
+
+
+.if.faqs.documentation
+  .if.faq
+    margin-left: 0;
+    background-color: #faf9f7;
+
+
+.if.text.layout.column.left
+  margin-left 0
+  margin-right auto
+  max-width 72ch
+
+
+
+.sg.drawer
+  & .if.sidebar-menu.is-open
+    animation none !important
+
+.sg.drawer
+  & .if.sidebar-menu > ul > li
+    &.hasno-page.is-parent
+      & > .hasno-page
+        cursor pointer
+        transition all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)
+        user-select none
+        &::after
+          transition all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)
+          content ""
+          display inline-block
+          visibility visible
+          opacity 1
+          transform none
+          width 1rem
+          height 1rem
+          margin-left 8px
+          position static
+          background-color transparent
+          background-image url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctitle%3Esmall down%3C/title%3E%3Cg class=%27nc-icon-wrapper%27 stroke-linecap=%27square%27 stroke-linejoin=%27miter%27 stroke-width=%272%27 fill=%27%23331e11%27 stroke=%27%23331e11%27%3E%3Cpolyline fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27 points=%2722,13 16,19 10,13 %27/%3E%3C/g%3E%3C/svg%3E")
+          background-repeat no-repeat
+          background-position center
+          transform-origin center center
+          background-size $size-24 $size-24
+
+
+.sg.drawer
+  & .if.sidebar-menu > ul > li
+    &.hasno-page.is-active.is-parent
+      & > .hasno-page
+        cursor pointer
+        &::after
+          transform rotate(-180deg)
+
+.sg.drawer
+  & .if.sidebar-menu ul > li
+    & button
+      border none
+      appearance none
+      background-color transparent
+      position relative
+
+
+.sg.drawer
+  & > .if.sidebar-menu > ul > li
+    & > a,
+    & > .hasno-page,
+    & > button
+      padding-left 0
+      margin-left 0
+  & > .if.sidebar-menu > ul > li
+    & > .if.sidebar-menu > ul > li
+      & > a,
+      & > .hasno-page,
+      & > button
+        padding-left 8px
+        margin-left 0
+  & > .if.sidebar-menu > ul > li
+    & > .if.sidebar-menu > ul > li
+      & > .if.sidebar-menu > ul > li
+        & > a,
+        & > .hasno-page,
+        & > button
+          padding-left 16px
+          margin-left 0
+  & > .if.sidebar-menu > ul > li
+    & > .if.sidebar-menu > ul > li
+      & > .if.sidebar-menu > ul > li
+        & > .if.sidebar-menu > ul > li
+          & > a,
+          & > .hasno-page,
+          & > button
+            padding-left 24px
+            margin-left 0
+  & > .if.sidebar-menu > ul > li
+    & > .if.sidebar-menu > ul > li
+      & > .if.sidebar-menu > ul > li
+        & > .if.sidebar-menu > ul > li
+          & > .if.sidebar-menu > ul > li
+            & > a,
+            & > .hasno-page,
+            & > button
+              padding-left 32px
+              margin-left 0
+  &  > .if.sidebar-menu > ul > li,
+  &  > .if.sidebar-menu > ul > li > .if.sidebar-menu > ul > li,
+  &  > .if.sidebar-menu > ul > li > .if.sidebar-menu > ul > li .if.sidebar-menu > ul > li
+    & > a,
+    & > .hasno-page,
+    & > button
+      font-size $size-font-14
+      line-height $size-line-height-24
+      +IDS_BREAKPOINT_MQ_ExtraSmall_Min()
+        font-size $size-font-14
+      +IDS_BREAKPOINT_MQ_Medium_Min()
+        font-size $size-font-14
+
+
+.if.navigational-card.text.box.green
+  & .if.text,
+  & .if.title
+    color #331e11
+  mix-blend-mode normal
+  position relative
+  background-image url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctitle%3Earrow right%3C/title%3E%3Cg class=%27nc-icon-wrapper%27 stroke-linecap=%27square%27 stroke-linejoin=%27miter%27 stroke-width=%271.5%27 fill=%27%23331e11%27 stroke=%27%23331e11%27%3E%3Cline data-cap=%27butt%27 data-color=%27color-2%27 fill=%27none%27 stroke-miterlimit=%2710%27 x1=%272%27 y1=%2716%27 x2=%2730%27 y2=%2716%27 stroke-linecap=%27butt%27/%3E%3Cpolyline fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27 points=%2721,7 30,16 21,25 %27/%3E%3C/g%3E%3C/svg%3E"),radial-gradient(100% 317.2% at 100% 0%, #51B1D1 0%, #89C7BA 100%)
+  background-repeat no-repeat, no-repeat
+  background-size 1.5rem 1.5rem, cover
+  background-position left 1.5rem bottom 1.5rem, center center
+  background-color #89C7BA
+  background-blend-mode normal, normal, multiply
+  &:hover,
+  &:focus,
+  &.is-focused,
+  &.is-hovered
+    background-position left 2rem bottom 1.5rem, center center
+
+.if.navigational-card.text.box.red
+  background-image url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctitle%3Earrow right%3C/title%3E%3Cg class=%27nc-icon-wrapper%27 stroke-linecap=%27square%27 stroke-linejoin=%27miter%27 stroke-width=%271.5%27 fill=%27%23331e11%27 stroke=%27%23331e11%27%3E%3Cline data-cap=%27butt%27 data-color=%27color-2%27 fill=%27none%27 stroke-miterlimit=%2710%27 x1=%272%27 y1=%2716%27 x2=%2730%27 y2=%2716%27 stroke-linecap=%27butt%27/%3E%3Cpolyline fill=%27none%27 stroke=%27%23331e11%27 stroke-miterlimit=%2710%27 points=%2721,7 30,16 21,25 %27/%3E%3C/g%3E%3C/svg%3E"),radial-gradient(100% 317.2% at 100% 0%, #FD866D 0%, #FBC65A 100%)
+  background-repeat no-repeat, no-repeat
+  background-size 1.5rem 1.5rem, cover
+  background-position left 1.5rem bottom 1.5rem, center center
+  background-color #FBC65A
+  background-blend-mode normal, normal, multiply
+  &:hover,
+  &:focus,
+  &.is-focused,
+  &.is-hovered
+    background-position left 2rem bottom 1.5rem, center center
+
+
+.if.square-overlay
+  width var(--card-height)
+  height var(--card-height)
+  position absolute
+  left 0
+  top 0
+  border-radius 0
+  margin 0 !important
+  pointer-events none
+
+  & > .square-1,
+  & > .square-1:empty
+    position absolute
+    width calc(var(--card-height) / 5)
+    height calc(var(--card-height) / 5)
+    left 0
+    top 0
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 0
+    background linear-gradient(120deg, #FBC65A 0%, #FD866D 100%)
+
+  & > .square-2,
+  & > .square-2:empty
+    position absolute
+    width calc(var(--card-height) / 5)
+    height calc(var(--card-height) / 5)
+    left calc(var(--card-height) / 5)
+    top 0
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 0
+    background linear-gradient(120deg, #FBC65A 0%, #FD866D 100%)
+  & > .square-3,
+  & > .square-3:empty
+    position absolute
+    width calc(var(--card-height) / 5)
+    height calc(var(--card-height) / 5)
+    left 0
+    top calc(var(--card-height) / 5)
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 0
+    background linear-gradient(120deg, #FBC65A 0%, #FD866D 100%)
+  & > .square-4,
+  & > .square-4:empty
+    position absolute
+    width calc(var(--card-height) / 5)
+    height calc(var(--card-height) / 5)
+    left calc((var(--card-height) / 5) * 2)
+    top 0rem
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 0
+    background linear-gradient(120deg, #FBC65A 0%, #FD866D 100%)
+  & > .square-5,
+  & > .square-5:empty
+    position absolute
+    width calc(var(--card-height) / 5)
+    height calc(var(--card-height) / 5)
+    left calc(var(--card-height) / 5)
+    top calc(var(--card-height) / 5)
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 0
+    background linear-gradient(120deg, #FBC65A 0%, #FD866D 100%)
+  & > .square-6,
+  & > .square-6:empty
+    position absolute
+    width calc(var(--card-height) / 5)
+    height calc(var(--card-height) / 5)
+    left 0rem
+    top calc((var(--card-height) / 5) * 2)
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 0
+    background linear-gradient(120deg, #FBC65A 0%, #FD866D 100%)
+  & > .square-7,
+  & > .square-7:empty
+    position absolute
+    width calc(var(--card-height) / 5)
+    height calc(var(--card-height) / 5)
+    left calc((var(--card-height) / 5) * 3)
+    top 0
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 0
+    background linear-gradient(120deg, #FBC65A 0%, #FD866D 100%)
+  & > .square-8,
+  & > .square-8:empty
+    position absolute
+    width calc(var(--card-height) / 5)
+    height calc(var(--card-height) / 5)
+    left calc((var(--card-height) / 5) * 2)
+    top calc(var(--card-height) / 5)
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 0
+    background linear-gradient(120deg, #FBC65A 0%, #FD866D 100%)
+  & > .square-9,
+  & > .square-9:empty
+    position absolute
+    width calc(var(--card-height) / 5)
+    height calc(var(--card-height) / 5)
+    left calc(var(--card-height) / 5)
+    top calc((var(--card-height) / 5) * 2)
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 0
+    background linear-gradient(120deg, #FBC65A 0%, #FD866D 100%)
+
+  & > .square-10,
+  & > .square-10:empty
+    position absolute
+    width calc(var(--card-height) / 5)
+    height calc(var(--card-height) / 5)
+    left 0rem
+    top calc((var(--card-height) / 5) * 3)
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 0
+    background linear-gradient(120deg, #FBC65A 0%, #FD866D 100%)
+
+  & > .square-11,
+  & > .square-11:empty
+    position absolute
+    width calc(var(--card-height) / 5)
+    height calc(var(--card-height) / 5)
+    left calc((var(--card-height) / 5) * 4)
+    top 0
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 0
+    background linear-gradient(120deg, #FBC65A 0%, #FD866D 100%)
+
+  & > .square-12,
+  & > .square-12:empty
+    position absolute
+    width calc(var(--card-height) / 5)
+    height calc(var(--card-height) / 5)
+    left calc((var(--card-height) / 5) * 3)
+    top calc(var(--card-height) / 5)
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 0
+    background linear-gradient(120deg, #FBC65A 0%, #FD866D 100%)
+
+  & > .square-13,
+  & > .square-13:empty
+    position absolute
+    width calc(var(--card-height) / 5)
+    height calc(var(--card-height) / 5)
+    left calc((var(--card-height) / 5) * 2)
+    top calc((var(--card-height) / 5) * 2)
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 0
+    background linear-gradient(120deg, #FBC65A 0%, #FD866D 100%)
+
+  & > .square-14,
+  & > .square-14:empty
+    position absolute
+    width calc(var(--card-height) / 5)
+    height calc(var(--card-height) / 5)
+    left calc((var(--card-height) / 5) * 1)
+    top calc((var(--card-height) / 5) * 3)
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 0
+    background linear-gradient(120deg, #FBC65A 0%, #FD866D 100%)
+
+  & > .square-15,
+  & > .square-15:empty
+    position absolute
+    width calc(var(--card-height) / 5)
+    height calc(var(--card-height) / 5)
+    left 0rem
+    top calc((var(--card-height) / 5) * 4)
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 0
+    background linear-gradient(120deg, #FBC65A 0%, #FD866D 100%)
+
+
+.if.radial-overlay
+  width calc(var(--card-height) * 2)
+  height calc(var(--card-height) * 2)
+  position absolute
+  left calc((var(--card-height) * 2) / -2)
+  top calc((var(--card-height) * 2) / -2)
+  border-radius 100%
+  margin 0 !important
+  pointer-events none
+
+  & > .radial-1,
+  & > .radial-1:empty
+    position absolute
+    width calc(var(--card-radial-height) / 5)
+    height calc(var(--card-radial-height) / 5)
+    left 50%
+    transform translate(-50%, -50%)
+    top 50%
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 100%
+    background conic-gradient(from 0deg at 50% 50%, #000000 0deg, rgba(0, 0, 0, 0) 90deg, #000000 360deg)
+  & > .radial-2,
+  & > .radial-2:empty
+    position absolute
+    width calc(var(--card-radial-height) * 2 / 5)
+    height calc(var(--card-radial-height) * 2 / 5)
+    left 50%
+    transform translate(-50%, -50%)
+    top 50%
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 100%
+    background conic-gradient(from 0deg at 50% 50%, #000000 0deg, rgba(0, 0, 0, 0) 90deg, #000000 360deg)
+  & > .radial-3,
+  & > .radial-3:empty
+    position absolute
+    width calc(var(--card-radial-height) * 3 / 5)
+    height calc(var(--card-radial-height) * 3 / 5)
+    left 50%
+    transform translate(-50%, -50%)
+    top 50%
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 100%
+    background conic-gradient(from 0deg at 50% 50%, #000000 0deg, rgba(0, 0, 0, 0) 90deg, #000000 360deg)
+  & > .radial-4,
+  & > .radial-4:empty
+    position absolute
+    width calc(var(--card-radial-height) * 4 / 5)
+    height calc(var(--card-radial-height) * 4 / 5)
+    left 50%
+    transform translate(-50%, -50%)
+    top 50%
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 100%
+    background conic-gradient(from 0deg at 50% 50%, #000000 0deg, rgba(0, 0, 0, 0) 90deg, #000000 360deg)
+  & > .radial-5,
+  & > .radial-5:empty
+    position absolute
+    width calc(var(--card-radial-height) * 5 / 5)
+    height calc(var(--card-radial-height) * 5 / 5)
+    left 50%
+    transform translate(-50%, -50%)
+    top 50%
+    display block
+    mix-blend-mode overlay
+    opacity 0.5
+    background-blend-mode multiply
+    border-radius 100%
+    background conic-gradient(from 0deg at 50% 50%, #000000 0deg, rgba(0, 0, 0, 0) 90deg, #000000 360deg)
+
+.green
+  & .if.square-overlay
+    & > [class*="square-"]
+      background linear-gradient(120deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%)
+
+
+.sg.if.sidebar-menu li
+  &.is-parent
+    & > a,
+    & > .hasno-page,
+    & > button
+      &.is-active
+        IDS_TYPOGRAPHY_FontFamily_SansBold()
+        background-color transparent
+  & > a,
+  & > .hasno-page,
+  & > button
+    &.is-active
+      IDS_TYPOGRAPHY_FontFamily_SansBold()
+      background-color transparent
+
+.sg.if.sidebar-menu
+  & .if.sidebar-menu
+    & > ul
+      & > li.is-active.is-grouped
+        & > a,
+        & > button
+          IDS_TYPOGRAPHY_FontFamily_Sans()
+      & > li.is-active
+        & .if.sidebar-menu
+          & > ul
+            & > li.is-active.is-grouped
+              & > a,
+              & > button
+                IDS_TYPOGRAPHY_FontFamily_Sans()
+            & > li.is-active
+              & .if.sidebar-menu
+                & > ul
+                  & > li.is-active.is-grouped
+                    & > a,
+                    & > button
+                      IDS_TYPOGRAPHY_FontFamily_Sans()
+
+
+.if.avatar.is-grayscaled
+  filter grayscale(1)
+
+
+.if.avatar.has-img
+  overflow hidden
+
+  & > *
+    height 100%
+    width 100%

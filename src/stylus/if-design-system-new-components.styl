@@ -1,0 +1,27 @@
+
+.if
+  &.axe.skip-to-content
+    background #e8e0d9
+    height auto
+    width 0
+    padding 0 20px
+    display none
+    justify-content center
+    align-items center
+    position absolute
+    left 0
+    top 0
+    overflow hidden
+    text-indent -99999px
+    transform translateY(-100%)
+    transition transform 0.2s, width 0.2s
+    +IDS_BREAKPOINT_MQ_Smaller_Min()
+      display flex
+
+
+  &.axe.skip-to-content:focus,
+  &.axe.skip-to-content.is-focused
+    text-indent 0
+    width auto
+    transform translateY(0%)
+    box-shadow 0 8px 10px 1px rgba($color-text-brown,0.14), 0 3px 14px 2px rgba($color-text-brown,0.12), 0 5px 5px -3px rgba($color-text-brown,0.20)

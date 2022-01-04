@@ -1,0 +1,406 @@
+
+
+.gatsby-highlight
+  margin 0
+  border-radius 0
+  margin-bottom $size-spacing-16
+  position relative
+  +IDS_BREAKPOINT_MQ_ExtraSmall_Min()
+    margin-bottom $size-spacing-32
+  +IDS_BREAKPOINT_MQ_Smaller_Min()
+    margin-bottom $size-spacing-64
+
+  &.wrapped
+    overflow-y auto
+    max-height 30vh
+
+#gatsby-focus-wrapper
+  height 100%
+  min-height 100vh
+  display flex
+  flex-direction column
+  width 100%
+
+.gatsby-highlight-code-line
+  background-color rgba($color-accent-blue, 0.1)
+
+/**
+ * Add back the container background-color, border-radius, padding, margin
+ * and overflow that we removed from <pre>.
+ */
+.gatsby-highlight.has-highlighted-lines
+  overflow auto
+  overflow-x hidden
+
+
+/**
+ * Remove the default PrismJS theme background-color, border-radius, margin,
+ * padding and overflow.
+ * 1. Make the element just wide enough to fit its content.
+ * 2. Always fill the visible space in .gatsby-highlight.
+ * 3. Adjust the position of the line numbers
+ */
+.gatsby-highlight.has-highlighted-lines pre[class*="language-"]
+  margin 0
+  padding 16px 20px
+  overflow initial
+  float left /* 1 */
+  min-width 100% /* 2 */
+
+
+.gatsby-highlight.has-highlighted-lines pre[class*="language-"].line-numbers
+  padding-left 3rem /* 3 */
+
+
+.gatsby-highlight.has-highlighted-lines .gatsby-highlight-code-line
+  display block
+  margin-right -1rem
+  margin-left -1rem
+  padding-right 1rem
+  padding-left 0.75rem
+  border-left 0.25rem solid $color-infographic-red
+
+
+.gatsby-highlight .inserted
+  background-color rgba(155, 185, 85, 0.2)
+
+
+.gatsby-highlight .deleted
+  background-color rgba(255, 0, 0, 0.2)
+
+
+
+.if.changelog
+  & [id*=breaking-changes]
+    padding 0
+    margin 0
+    margin-bottom $size-spacing-24
+    text-rendering optimizeLegibility
+    font-size $size-font-18
+    line-height $size-line-height-28
+    letter-spacing normal
+    font-variation-settings "wght" $font-weight-126 // @stylint ignore
+    font-family $font-family-sans
+    font-weight 400
+    text-transform uppercase
+    @supports (display: grid)
+      font-weight normal
+    +IDS_BREAKPOINT_MQ_Medium_Min()
+      font-size $size-font-24
+      line-height $size-line-height-32
+      margin-bottom $size-spacing-24
+      font-variation-settings "wght" $font-weight-126 // @stylint ignore
+  & [id*="bug-fixes"],
+  & [id*="features"],
+  & [id*="reverts"],
+  & [id*="chore"],
+  & [id*="code-refactoring"]
+    padding 0
+    margin 0
+    margin-bottom $size-spacing-24
+    text-rendering optimizeLegibility
+    font-size $size-font-18
+    line-height $size-line-height-28
+    letter-spacing normal
+    font-variation-settings "wght" $font-weight-126 // @stylint ignore
+    font-family $font-family-sans
+    font-weight 400
+    text-transform capitalize
+    @supports (display: grid)
+      font-weight normal
+
+
+.if.changelog
+  & #change-log
+    display none
+
+  & h1.if.heading:not(#change-log)[id*="00-"]:not(.hero-title)
+    IDS_TYPOGRAPHY_FontFamily_Sans()
+    font-size $size-font-14
+    line-height $size-line-height-24
+    letter-spacing normal
+    padding 0
+    margin 0
+    margin-bottom $size-spacing-24
+    border-bottom 1pt solid #e8e0d9
+    padding-bottom 2rem
+    padding-top 3rem
+    font-variation-settings "wght" $font-weight-85 // @stylint ignore
+    +IDS_BREAKPOINT_MQ_Xxs_Min()
+      font-size $size-font-22
+      margin-bottom $size-spacing-24
+    +IDS_BREAKPOINT_MQ_ExtraSmall_Min()
+      font-size $size-font-15
+      margin-bottom $size-spacing-24
+    +IDS_BREAKPOINT_MQ_Medium_Min()
+      font-size $size-font-16
+      font-variation-settings "wght" $font-weight-82 // @stylint ignore
+      margin-bottom $size-spacing-32
+    & a:not(.anchor)
+      text-rendering optimizeLegibility
+      font-size $size-font-20
+      line-height $size-line-height-32
+      letter-spacing normal
+      font-variation-settings "wght" $font-weight-64 // @stylint ignore
+      font-family $font-family-sans
+      font-weight 400
+      @supports (display: grid)
+        font-weight normal
+      +IDS_BREAKPOINT_MQ_Xxs_Min()
+        font-size $size-font-22
+      +IDS_BREAKPOINT_MQ_ExtraSmall_Min()
+        font-size $size-font-24
+      +IDS_BREAKPOINT_MQ_Medium_Min()
+        font-size $size-font-32
+        line-height $size-line-height-42
+        font-variation-settings "wght" $font-weight-50 // @stylint ignore
+  & h3.if.heading,
+
+    padding 0
+    margin 0
+    margin-bottom $size-spacing-24
+    IDS_TYPOGRAPHY_FontFamily_Sans()
+    font-size $size-font-14
+    line-height $size-line-height-24
+    letter-spacing normal
+    font-variation-settings "wght" $font-weight-85 // @stylint ignore
+    +IDS_BREAKPOINT_MQ_ExtraSmall_Min()
+      font-size $size-font-15
+    +IDS_BREAKPOINT_MQ_Medium_Min()
+      font-size $size-font-16
+      font-variation-settings "wght" $font-weight-82 // @stylint ignore
+    & a:not(.anchor)
+
+      text-rendering optimizeLegibility
+      font-size $size-font-18
+      line-height $size-line-height-28
+      letter-spacing normal
+      font-variation-settings "wght" $font-weight-126 // @stylint ignore
+      font-family $font-family-sans
+      font-weight 400
+      @supports (display: grid)
+        font-weight normal
+  & h2.if.heading,
+  & h1.if.heading:not([id*="00-"]):not(#change-log):not(.hero-title)
+    padding 0
+    margin 0
+    margin-bottom $size-spacing-24
+    padding-top 3rem
+    IDS_TYPOGRAPHY_FontFamily_Sans()
+    font-size $size-font-14
+    line-height $size-line-height-24
+    letter-spacing normal
+    font-variation-settings "wght" $font-weight-85 // @stylint ignore
+    +IDS_BREAKPOINT_MQ_ExtraSmall_Min()
+      font-size $size-font-15
+    +IDS_BREAKPOINT_MQ_Medium_Min()
+      font-size $size-font-16
+      font-variation-settings "wght" $font-weight-82 // @stylint ignore
+      margin-bottom $size-spacing-24
+    & a:not(.anchor)
+
+      text-rendering optimizeLegibility
+      font-size $size-font-18
+      line-height $size-line-height-28
+      letter-spacing normal
+      font-variation-settings "wght" $font-weight-126 // @stylint ignore
+      font-family $font-family-sans
+      font-weight 400
+      @supports (display: grid)
+        font-weight normal
+      +IDS_BREAKPOINT_MQ_Medium_Min()
+        font-size $size-font-24
+        line-height $size-line-height-32
+        font-variation-settings "wght" $font-weight-64 // @stylint ignore
+
+.if.changelog
+  & [id*=breaking-changes],
+  & [id*=bug-fixes],
+  & [id*=features],
+  & [id*=reverts],
+  & [id*=chore],
+  & [id*=code-refactoring]
+    & + ul
+      list-style none
+      IDS_UTIL_Padding_Horizontal()
+      padding-top 2rem
+      padding-bottom 2rem
+      z-index 1
+      position relative
+      &::after
+        content ""
+        position absolute
+        left 0
+        right 0
+        bottom 0
+        top 0
+        display block
+        z-index -1
+        mix-blend-mode multiply
+        opacity 0.5
+
+.if.changelog
+  & [id*="chore"] + ul
+    &::after
+      background-color $color-infographic-light-blue
+
+.if.changelog
+  & [id*="features"] + ul
+    &::after
+      background-color $color-infographic-light-green
+
+.if.changelog
+  & [id*="breaking-changes"] + ul
+    &::after
+      background-color $color-infographic-light-red
+
+.if.changelog
+  & [id*="bug-fixes"] + ul
+    &::after
+      background-color $color-infographic-light-yellow
+
+
+.if.changelog
+  & .if.text.lead.center,
+  & .if.text.body.center
+    max-width 50ch
+    margin-left auto
+    margin-right auto
+
+.if.changelog
+  & #change-log
+    & + p.if
+      IDS_TYPOGRAPHY_FontFamily_Sans()
+      line-height $size-line-height-24
+      letter-spacing normal
+      font-variation-settings "wght" $font-weight-85 // @stylint ignore
+      +IDS_BREAKPOINT_MQ_Medium_Min()
+        font-variation-settings "wght" $font-weight-82 // @stylint ignore
+      text-align left
+      display inline-block
+      color $color-text-light-brown
+      width 100%
+      max-width 50ch
+      font-size .9375rem
+      line-height 1.5rem
+
+
+
+.sg.documentation .if.is-changelog,
+.if.is-changelog
+  & h2:not(:first-child),
+  & h2.sg.if.heading:not(:first-child)
+    IDS_TYPOGRAPHY_Heading_Smallest()
+  & h3,
+  & h3.sg.if.heading
+    IDS_TYPOGRAPHY_Heading_Smallest()
+    &[id*=breaking-changes],
+    &[id*=bug-fixes],
+    &[id*=features],
+    &[id*=reverts],
+    &[id*=chore],
+    &[id*=code-refactoring]
+      line-height 1.75rem
+      color $color-text-light-brown
+      letter-spacing normal
+      font-variation-settings "wght" 126
+      font-family "If Sans", Arial, sans-serif
+      font-weight normal
+      font-size 14px
+      text-transform uppercase
+  & p
+    IDS_TYPOGRAPHY_Text_Meta()
+    margin-bottom 1rem !important
+  & ol,
+  & ul
+    list-style none
+    list-style-position outside
+    margin 0
+    margin-bottom 2rem !important
+    padding-left $size-spacing-32
+    & > li,
+    & > li.if
+      IDS_TYPOGRAPHY_Text_Meta()
+      list-style-position outside
+      margin-bottom $size-spacing-8
+      +IDS_BREAKPOINT_MQ_Small_Min()
+        margin-bottom $size-spacing-8
+      & > p,
+      & > p.if
+        IDS_TYPOGRAPHY_Text_Meta()
+        margin-bottom $size-spacing-8
+        +IDS_BREAKPOINT_MQ_Small_Min()
+          margin-bottom $size-spacing-8
+  & #change-log
+    display none
+    & + p.if
+      display none
+
+.if.is-changelog
+  & [id*=breaking-changes]
+    IDS_TYPOGRAPHY_Text_MetaBold()
+    margin-bottom 1rem !important
+    text-transform uppercase
+  & [id*="bug-fixes"],
+  & [id*="features"],
+  & [id*="reverts"],
+  & [id*="chore"],
+  & [id*="code-refactoring"]
+    IDS_TYPOGRAPHY_Text_MetaBold()
+    margin-bottom 1rem !important
+    text-transform capitalize
+
+.if.is-changelog
+  & [id*=breaking-changes],
+  & [id*=bug-fixes],
+  & [id*=features],
+  & [id*=reverts],
+  & [id*=chore],
+  & [id*=code-refactoring]
+    & + ul
+      list-style none
+//
+// .if.hero.blog
+//   & .if.content
+//     display flex
+//     align-items flex-start
+//     flex-direction column
+//     justify-content center
+
+
+code[class*="language-"], pre[class*="language-"]
+  font-size 15px
+
+
+.if.editorial-card.list
+  & .gatsby-image-wrapper [data-main-image]
+    object-fit contain !important
+
+
+h1 .anchor svg, h2 .anchor svg, h3 .anchor svg, h4 .anchor svg, h5 .anchor svg, h6 .anchor svg
+  display none !important
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  & .anchor.before
+    min-height 1.75rem
+    width 1rem
+    line-height inherit
+    IDS_TYPOGRAPHY_FontFamily_Sans()
+    color $color-accent-blue
+    &::after
+      content '#'
+      display inline-block
+      width 100%
+      height 100%
+      font-size 16px
+      line-height inherit
+
+  &:hover
+    & .anchor.before
+      &::after
+        text-decoration underline

@@ -1,0 +1,141 @@
+
+.sg.palette.container {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  background: transparent;
+  padding: 0;
+  align-items: flex-start;
+}
+
+.sg.palette.item {
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  border-radius: 0;
+  height: 16rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.sg.palette.itemText {
+  display: flex;
+  flex-direction: column;
+  position: static;
+  margin-bottom: 0.125rem;
+  margin-top: 0.125rem;
+  font-size: $size-spacing-16;
+  font-weight: normal;
+  color $color-text-brown
+  text-align: left;
+}
+
+.sg.palette.mesh {
+  display: grid;
+  width: 100%;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(152px, 1fr));
+  margin-bottom: 4rem;
+}
+
+
+@media screen and (min-width: 960px) {
+  .sg.palette.mesh {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+}
+
+
+
+.sg.palette.mesh.periodic {
+  display: grid;
+  width: 100%;
+  grid-gap: 0;
+  grid-template-columns: repeat(auto-fit, 5rem);
+  grid-template-rows: repeat(auto-fit, 5rem);
+}
+
+
+.sg.palette.mesh:not(.periodic){
+  grid-template-columns: 100%;
+  background-color: transparent;
+}
+@media screen and (min-width: 960px) {
+  .sg.palette.mesh:not(.periodic){
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.sg.palette.mesh.periodic .sg.palette.item{
+  width: 5rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.sg.palette.mesh{
+    background-color: #f6f3f0;
+}
+
+
+
+.if.palette
+  display grid
+  transition all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1)
+  grid-template-columns 240px 240px 240px
+  grid-gap 4rem 0
+  margin-bottom 6rem
+  width 100%
+
+  &.background
+    grid-template-columns repeat(auto-fit, minmax(240px, 1fr))
+    grid-gap 4rem 2rem
+
+.if.palette-item
+  display flex
+  flex-direction column
+  width 240px
+  transition all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1)
+
+.if.palette .if.color
+  height 104px
+  width 104px
+  position relative
+  transition all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1)
+
+.if.palette .if.palette-name
+  IDS_TYPOGRAPHY_FontFamily_SansMedium()
+  position absolute
+  left $size-spacing-16
+  bottom $size-spacing-16
+  text-transform uppercase
+  transition all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1)
+  width 200px
+
+.if.palette .if.description
+  padding $size-spacing-16 0 0
+  transition all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1)
+
+//
+// .if.palette:hover
+//   & .if.palette-item:nth-child(n+2)
+//     width 40px
+//
+//     & .if.palette-name
+//       transform rotate(-90deg) translateY(calc(100% + 10px))
+//       transform-origin: bottom left;
+//       left: auto;
+//       top: auto;
+//       right: auto;
+//       bottom: $size-spacing-16;
+
+.if.palette .if.color.lighterBeige
+  border 1pt solid currentColor

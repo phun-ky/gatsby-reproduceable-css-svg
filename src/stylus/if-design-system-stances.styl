@@ -1,0 +1,237 @@
+.if.stances
+  display grid
+  margin 0
+  padding 0
+  width 100%
+  margin-bottom $size-spacing-32
+  grid-template-columns 100%
+  grid-gap $size-spacing-24 $size-spacing-24
+  +IDS_BREAKPOINT_MQ_ExtraSmall_Min()
+    grid-gap $size-spacing-32 $size-spacing-32
+    margin-bottom $size-spacing-48
+  +IDS_BREAKPOINT_MQ_Smaller_Min()
+    grid-gap $size-spacing-48 $size-spacing-48
+  +IDS_BREAKPOINT_MQ_Medium_Min()
+    margin-bottom $size-spacing-64
+
+
+.if.stances
+  & .if.stance
+    display grid
+    grid-template-columns 1fr
+    margin 0
+    padding 0
+    position relative
+    width 100%
+    +IDS_BREAKPOINT_MQ_Small_Min()
+      grid-template-columns 1fr 1fr
+    +IDS_BREAKPOINT_MQ_Large_Min()
+      grid-template-columns 1fr 1fr 1fr
+
+
+.if.stances
+  & .if.stance
+    &.column
+      grid-template-columns 1fr
+
+
+.if.stances
+  & .if.stance
+    &.column
+      & .if.description
+        padding $size-spacing-24
+        padding-right 8rem
+        margin 0
+
+
+.if.stances
+  & .if.stance
+    &.column
+      & .if.example
+        +IDS_BREAKPOINT_MQ_Large_Min()
+          grid-column auto / span 1
+
+
+.if.stances
+  & .if.stance
+    & .description
+      border-left none
+      border-top 10px solid currentColor
+      +IDS_BREAKPOINT_MQ_Small_Min()
+        border-top none
+        border-left 10px solid currentColor
+
+.if.stances
+  & .if.stance
+    &.column
+      & .description
+        border-left none
+        border-top 10px solid currentColor
+
+
+.if.stances
+  & .if.stance
+    &.good
+      & .description
+        border-color $color-status-green
+
+
+.if.stances
+  & .if.stance
+    &.bad
+      & .description
+        border-color lighten($color-status-red, 10%)
+
+
+.if.stances
+  & .if.stance
+    &::before
+      background-repeat no-repeat
+      content ""
+      height $size-40
+      width $size-40
+      z-index 1
+      position absolute
+      top $size-24
+      IDS_UTIL_Placement_RightHorizontal()
+      display block
+      z-index 10
+
+
+.if.stances
+  & .if.stance
+    &.good::before
+      background-image url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' height='40' width='40' fill='%23217331' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Ccircle cx='15.5' cy='9.5' r='1.5'/%3E%3Ccircle cx='8.5' cy='9.5' r='1.5'/%3E%3Cpath d='M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-4c-1.48 0-2.75-.81-3.45-2H6.88c.8 2.05 2.79 3.5 5.12 3.5s4.32-1.45 5.12-3.5h-1.67c-.7 1.19-1.97 2-3.45 2z'/%3E%3C/svg%3E%0A")
+
+
+.if.stances
+  & .if.stance
+    &.bad::before
+      background-image url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' height='40' width='40' fill='%23e15044' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Ccircle cx='15.5' cy='9.5' r='1.5'/%3E%3Ccircle cx='8.5' cy='9.5' r='1.5'/%3E%3Cpath d='M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-6c-2.33 0-4.32 1.45-5.12 3.5h1.67c.69-1.19 1.97-2 3.45-2s2.75.81 3.45 2h1.67c-.8-2.05-2.79-3.5-5.12-3.5z'/%3E%3C/svg%3E%0A")
+
+
+.if.stances
+  & .if.stance
+    & .if.example
+      width 100%
+      background-color $color-background-lightest-beige
+      display block
+      order 2
+      margin 0
+      min-height 200px
+      IDS_UTIL_Padding_Horizontal()
+      padding-top $size-spacing-48
+      padding-bottom $size-spacing-48
+      +IDS_BREAKPOINT_MQ_Small_Min()
+        width 100%
+      +IDS_BREAKPOINT_MQ_Large_Min()
+        grid-column auto / span 2
+
+.if.stances
+  & .if.stance
+    & .if.example
+      &.full
+        background-color $color-background-lightest-beige
+
+
+.if.stances
+  & .if.stance
+    & .if.description
+      order 1
+      IDS_TYPOGRAPHY_Text_Body()
+      position relative
+      background-color $color-background-lighter-beige
+      padding-right 6.5rem
+      padding-left $size-spacing-24
+      padding-top $size-spacing-48
+      padding-bottom $size-spacing-48
+      width 100%
+      mix-blend-mode multiply
+      +IDS_BREAKPOINT_MQ_Small_Min()
+        padding-right $size-spacing-24
+
+
+.if.stances
+  & .if.stance
+    &.good .if.description
+      background-color lighten($color-status-green, 80%)
+
+
+.if.stances
+  & .if.stance
+    &.bad .if.description
+      background-color lighten($color-status-red, 80%)
+
+
+.if.stances
+  & .if.stance
+    &.responsive
+      display none
+      +IDS_BREAKPOINT_MQ_Smaller_Min()
+        display flex
+
+
+.if.stances
+  & .if.stance
+    &.responsive
+      & .if.example
+        border none
+
+
+.if.stances
+  & .if.stance
+    &.responsive
+      & .if.example > *
+        margin 0 auto
+
+
+.if.stances
+  & .if.stance
+    &.iphone,
+    &.mobile,
+    &.tablet
+      & > .if.example
+        background-color grayscale($color-infographic-light-yellow)
+        display flex
+        align-items center
+        justify-content center
+        padding-top 5rem
+        padding-bottom 5rem
+
+.if.stances
+  & .if.stance
+    &.iphone,
+    &.mobile
+      & > .if.example
+        & > *
+          box-shadow $depth-shadow-light-100
+
+
+.if.stances
+  & .if.stance
+    &.iphone,
+    &.mobile,
+    &.mobile.medium
+      & > .if.example
+        & > *
+          width 375px
+          height 667px
+
+
+.if.stances
+  & .if.stance
+    &.tablet
+      & > .if.example
+        & > *
+          width 768px
+          height 1024px
+
+
+.if.stances
+  & .if.stance
+    &.tablet
+      &.horizontal
+        & > .if.example
+          & > *
+            width 1024px
+            height 768px

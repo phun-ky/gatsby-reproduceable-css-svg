@@ -1,0 +1,52 @@
+.if.code-examples
+  display flex
+  flex-direction column
+  justify-content center
+  align-items flex-start
+  margin 0
+  padding 0
+
+
+.if.code-examples .if.code-example
+  display flex
+  align-items flex-start
+  justify-content flex-start
+  margin 0
+  padding 0
+  width 100%
+  position relative
+  margin-bottom $size-spacing-32
+  flex-direction column
+  +IDS_BREAKPOINT_MQ_Large_Min()
+    margin-bottom $size-spacing-64
+
+
+.if.code-example .if.example
+  width 100%
+  background-color $color-background-lightest-beige
+  display block
+  order 1
+  margin 0
+
+
+.if.code-example figcaption.if.description
+  order 2
+  width 100%
+
+
+.if.code-example
+  & .gatsby-highlight
+    width 100%
+    margin 0
+
+  & .gatsby-highlight > pre[class*="language-"]
+  & pre[class*="language-"]
+    border-top-right-radius 0
+    border-top-left-radius 0
+    margin 0
+
+.if.code-example .if.example.dark
+  background-color $color-background-light-beige
+
+.if.code-example .if.example.darker
+  background-color $color-background-dark-beige
